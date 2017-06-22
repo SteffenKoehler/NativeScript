@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/steffen.koehler/Documents/Studium/bachelor/NativeApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-xhdpi/icon.png",
+        "source": "/Users/steffen.koehler/Documents/Studium/bachelor/NativeApp/platforms/android/src/main/res/drawable-xhdpi/icon.png"
+    },
+    {
+        "merged": "/Users/steffen.koehler/Documents/Studium/bachelor/NativeApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-xhdpi/background.png",
+        "source": "/Users/steffen.koehler/Documents/Studium/bachelor/NativeApp/platforms/android/src/main/res/drawable-xhdpi/background.png"
+    },
+    {
+        "merged": "/Users/steffen.koehler/Documents/Studium/bachelor/NativeApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-xhdpi/group.png",
+        "source": "/Users/steffen.koehler/Documents/Studium/bachelor/NativeApp/platforms/android/src/main/res/drawable-xhdpi/group.png"
+    },
+    {
+        "merged": "/Users/steffen.koehler/Documents/Studium/bachelor/NativeApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-xhdpi/logo.png",
+        "source": "/Users/steffen.koehler/Documents/Studium/bachelor/NativeApp/platforms/android/src/main/res/drawable-xhdpi/logo.png"
+    },
+    {
+        "merged": "/Users/steffen.koehler/Documents/Studium/bachelor/NativeApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-xhdpi/group_white.png",
+        "source": "/Users/steffen.koehler/Documents/Studium/bachelor/NativeApp/platforms/android/src/main/res/drawable-xhdpi/group_white.png"
+    }
+]

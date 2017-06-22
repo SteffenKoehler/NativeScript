@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Created by steffen.koehler on 15.06.17.
+ */
+var Randomuser = (function () {
+    function Randomuser(userGender, name, picture, location, email) {
+        this.userGender = userGender;
+        this.name = name;
+        this.picture = picture;
+        this.location = location;
+        this.email = email;
+    }
+    return Randomuser;
+}());
+exports.Randomuser = Randomuser;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmFuZG9tVXNlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInJhbmRvbVVzZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7R0FFRztBQUNIO0lBQ0ksb0JBQ1csVUFBa0IsRUFDbEIsSUFHTixFQUNNLE9BSU4sRUFDTSxRQUtOLEVBQ00sS0FBYTtRQWhCYixlQUFVLEdBQVYsVUFBVSxDQUFRO1FBQ2xCLFNBQUksR0FBSixJQUFJLENBR1Y7UUFDTSxZQUFPLEdBQVAsT0FBTyxDQUliO1FBQ00sYUFBUSxHQUFSLFFBQVEsQ0FLZDtRQUNNLFVBQUssR0FBTCxLQUFLLENBQVE7SUFFckIsQ0FBQztJQUNSLGlCQUFDO0FBQUQsQ0FBQyxBQXJCRCxJQXFCQztBQXJCWSxnQ0FBVSIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogQ3JlYXRlZCBieSBzdGVmZmVuLmtvZWhsZXIgb24gMTUuMDYuMTcuXG4gKi9cbmV4cG9ydCBjbGFzcyBSYW5kb211c2VyIHtcbiAgICBjb25zdHJ1Y3RvcihcbiAgICAgICAgcHVibGljIHVzZXJHZW5kZXI6IHN0cmluZyxcbiAgICAgICAgcHVibGljIG5hbWU6IHtcbiAgICAgICAgICAgIGZpcnN0IDogc3RyaW5nLFxuICAgICAgICAgICAgbGFzdCA6IHN0cmluZ1xuICAgICAgICB9LFxuICAgICAgICBwdWJsaWMgcGljdHVyZToge1xuICAgICAgICAgICAgbGFyZ2U6IHN0cmluZyxcbiAgICAgICAgICAgIG1lZGl1bTogc3RyaW5nLFxuICAgICAgICAgICAgdGh1bWJuYWlsOiBzdHJpbmcsXG4gICAgICAgIH0sXG4gICAgICAgIHB1YmxpYyBsb2NhdGlvbjoge1xuICAgICAgICAgICAgc3RyZWV0OiBzdHJpbmcsXG4gICAgICAgICAgICBjaXR5OiBzdHJpbmcsXG4gICAgICAgICAgICBzdGF0ZTogc3RyaW5nLFxuICAgICAgICAgICAgcG9zdGNvZGU6IG51bWJlclxuICAgICAgICB9LFxuICAgICAgICBwdWJsaWMgZW1haWw6IHN0cmluZ1xuXG4gICAgKSB7fVxufVxuIl19

@@ -1,0 +1,33 @@
+<StackLayout>
+    <ActionBar title="Profile">
+        <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"></NavigationButton>
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout>
+            <FlexboxLayout flexDirection="column" alignItems="center">
+                <Image [src]="person.picture.large"></Image>
+
+                <FlexboxLayout flexDirection="row">
+                    <Label class="capitalize" [text]="person.name.first"></Label>
+                    <Label class="capitalize m-l-5" [text]="person.name.last"></Label>
+                </FlexboxLayout>
+
+                <Label class="capitalize m-t-10" [text]="person.email"></Label>
+                <Label class="capitalize m-t-10" [text]="person.location.street"></Label>
+
+                <FlexboxLayout class="m-t-10 m-b-10" flexDirection="row" alignItems="stretch">
+                    <Label [text]="person.location.postcode"></Label>
+                    <Label class="capitalize m-l-5" [text]="person.location.city"></Label>
+                </FlexboxLayout>
+            </FlexboxLayout>
+
+            <ActivityIndicator *ngIf="isLoading " [busy]="isLoading " class="activity-indicator "></ActivityIndicator>
+
+            <!--<StackLayout>
+                <map [street]="person.location.street"></map>
+            </StackLayout>-->
+
+        </StackLayout>
+    </ScrollView>
+</StackLayout>

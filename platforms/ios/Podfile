@@ -1,0 +1,10 @@
+use_frameworks!
+
+target "NativeApp" do
+# Begin Podfile - /Users/steffen.koehler/Documents/Studium/bachelor/NativeApp/node_modules/nativescript-google-maps-sdk/platforms/ios/Podfile 
+ source 'https://github.com/CocoaPods/Specs.git'
+
+pod 'GoogleMaps' 
+ # End Podfile 
+
+end

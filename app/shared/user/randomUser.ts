@@ -19,7 +19,8 @@ export class Randomuser {
             state: string,
             postcode: number
         },
-        public email: string
+        public email: string,
+        public cell: string
 
     ) {}
 }

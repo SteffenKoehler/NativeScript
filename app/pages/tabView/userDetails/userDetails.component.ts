@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
-
+import { alert } from "ui/dialogs";
 import { UserData } from "../../../providers/userData/userData";
 import { Randomuser } from "../../../shared/user/randomUser";
 
@@ -23,7 +23,21 @@ export class UserDetailsComponent implements OnInit {
         this.isLoading = false;
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+
+    }
+
+    onAddReactionButtonTap() {
+        let options = {
+            title: "Add reaction",
+            message: "Added some fancy reaction *lul*",
+            okButtonText: "OK"
+        };
+
+        alert(options).then(() => {
+            console.log("Race chosen!");
+        });
+    }
 
 
 }

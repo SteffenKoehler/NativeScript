@@ -43,7 +43,7 @@ export class RandomuserService {
                         postcode: randomUser.location.postcode
                     };
 
-                    randomUserList.push(new Randomuser(randomUser.gender, name, picture, location, randomUser.email));
+                    randomUserList.push(new Randomuser(randomUser.gender, name, picture, location, randomUser.email, randomUser.cell));
                 });
                 return randomUserList;
             })

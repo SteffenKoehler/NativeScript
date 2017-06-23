@@ -38,3 +38,12 @@ Label {
     padding-right: 40vw;
     border-radius: 50vw;
 }
+
+.person-details {
+
+}
+
+.person-details Label {
+    font-size: 14dpi;
+    color: #4a4a4a;
+}

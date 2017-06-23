@@ -9,3 +9,5 @@ platforms/
 tmp/
 typings/
 .idea
+.nsbuildinfo
+.nslivesyncinfo

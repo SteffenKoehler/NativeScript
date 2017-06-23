@@ -21,6 +21,7 @@ import { UserData } from "../../providers/userData/userData";
 })
 
 export class TabViewItemsComponent {
+    public  selectedIndex: number;
     titleAndIcon: any = {iconSource: "res://group_white"};
     isLoading = false;
     listLoaded = false;
@@ -35,6 +36,7 @@ export class TabViewItemsComponent {
     ) { }
 
     ngOnInit(): void {
+        this.selectedIndex = 0;
         this.items = this.itemService.getItems();
         this.listLoaded = true;
     }
@@ -42,9 +44,10 @@ export class TabViewItemsComponent {
 
     public onIndexChanged(args) {
         let tabView = <TabView>args.object;
-
+        this.selectedIndex = tabView.selectedIndex;
 
         if(tabView.selectedIndex === 1) {
+            //tabView.items[1].iconSource = "res://map";
             if(this.randomUserList.length === 0){
                 this.isLoading = true;
                 this.randomUserService.getUsers(50, 'de')
@@ -56,6 +59,8 @@ export class TabViewItemsComponent {
                         this.listLoaded = true;
                     });
             }
+        } else {
+            //tabView.items[1].iconSource = "res://group_white";
         }
         console.log("Selected index changed! New inxed: " + tabView.selectedIndex);
     }

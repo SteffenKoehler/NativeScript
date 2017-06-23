@@ -4,7 +4,6 @@ import { StackLayout } from "ui/layouts/stack-layout";
 
 import { TabView, SelectedIndexChangedEventData, TabViewItem } from "ui/tab-view";
 
-
 import { Item } from "../../shared/item/item";
 import { ItemService } from "../../shared/item/item.service";
 import { Randomuser } from "../../shared/user/randomUser";
@@ -22,18 +21,20 @@ import { UserData } from "../../providers/userData/userData";
 
 export class TabViewItemsComponent {
     public  selectedIndex: number;
-    titleAndIcon: any = {iconSource: "res://group_white"};
     isLoading = false;
     listLoaded = false;
     items: Item[];
     randomUserList: Array<Randomuser> = [];
+    randomUserCount: number = 0;
+    sliderValue: number;
 
     constructor(
         private itemService: ItemService,
         private randomUserService: RandomuserService,
         private router: Router,
         private userData : UserData
-    ) { }
+
+    ) {}
 
     ngOnInit(): void {
         this.selectedIndex = 1;
@@ -47,27 +48,36 @@ export class TabViewItemsComponent {
         this.selectedIndex = tabView.selectedIndex;
 
         if(tabView.selectedIndex === 1) {
-            //tabView.items[1].iconSource = "res://map";
-            if(this.randomUserList.length === 0){
-                this.isLoading = true;
-                this.randomUserService.getUsers(50, 'de')
-                    .subscribe(loadedRandomusers => {
-                        loadedRandomusers.forEach((randomUser) => {
-                            this.randomUserList.push(randomUser);
-                        });
-                        this.isLoading = false;
-                        this.listLoaded = true;
-                    });
-            }
-        } else {
-            //tabView.items[1].iconSource = "res://group_white";
+                this.getUserList(args);
         }
         console.log("Selected index changed! New inxed: " + tabView.selectedIndex);
+    }
+
+    getUserList (args) {
+        if(this.randomUserCount !== this.randomUserService.numberOfResults) {
+            this.isLoading = true;
+            this.listLoaded = false;
+            this.randomUserList = [];
+
+            this.randomUserCount = this.randomUserService.numberOfResults;
+            this.randomUserService.getUsers('de')
+                .subscribe(loadedRandomusers => {
+                    loadedRandomusers.forEach((randomUser) => {
+                        this.randomUserList.push(randomUser);
+                    });
+                    this.isLoading = false;
+                    this.listLoaded = true;
+                });
+        }
     }
 
     onUserTab(args){
         this.userData.storage = this.randomUserList[args.index];
         this.router.navigate(["userDetails"]);
+    }
+
+    newSliderValue(newValue) {
+        this.randomUserService.numberOfResults = Math.round(newValue);
     }
 }
 

@@ -113,6 +113,14 @@
                     <Switch></Switch>
                 </FlexboxLayout>
 
+
+                <GridLayout class="m-15" rows="auto" columns="50 * 50">
+                    <Label class="h3" text="15" textWrap="true" row="0" col="0"></Label>
+                    <Slider #slider minValue="15" maxValue="1000" [(ngModel)]="sliderValue" (valueChange)="newSliderValue(slider.value)" row="0"
+                            col="1"></Slider>
+                    <Label class="h3" text="1000" textWrap="true" row="0" col="2"></Label>
+                </GridLayout>
+
             </FlexboxLayout>
         </StackLayout>
     </template>

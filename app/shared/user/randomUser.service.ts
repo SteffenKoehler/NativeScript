@@ -12,12 +12,14 @@ import {Randomuser} from "./randomUser";
 export class RandomuserService {
     constructor(private http: Http) {}
 
+    numberOfResults: number = 50;
+
     url = 'https://randomuser.me/api/';
 
-    getUsers(numberOfResults, nationalitie) {
+    getUsers(nationalitie) {
         let headers = new Headers();
 
-        this.url = this.url + "?results=" + numberOfResults + "&nat=" + nationalitie;
+        this.url = this.url + "?results=" + this.numberOfResults + "&nat=" + nationalitie;
 
         return this.http.get(this.url, {
         })
@@ -54,6 +56,4 @@ export class RandomuserService {
         console.log(JSON.stringify(error.json()));
         return Observable.throw(error);
     }
-
-
 }

@@ -1,33 +1,66 @@
 <StackLayout>
-    <ActionBar title="Profile">
+    <ActionBar title="Kontakte">
         <NavigationButton text="" android.systemIcon="ic_menu_back"></NavigationButton>
     </ActionBar>
 
     <ScrollView>
-        <StackLayout>
-            <FlexboxLayout flexDirection="column" alignItems="center">
+        <FlexboxLayout flexDirection="column" alignItems="center">
+            <FlexboxLayout flexDirection="column" width="100%" alignItems="center" class="person-wrapper m-b-10">
                 <Image [src]="person.picture.large"></Image>
 
-                <FlexboxLayout flexDirection="row">
+                <FlexboxLayout flexDirection="row" class="m-t-10">
                     <Label class="capitalize" [text]="person.name.first"></Label>
                     <Label class="capitalize m-l-5" [text]="person.name.last"></Label>
                 </FlexboxLayout>
 
-                <Label class="capitalize m-t-10" [text]="person.email"></Label>
-                <Label class="capitalize m-t-10" [text]="person.location.street"></Label>
+                <Label class="m-t-5 m-b-20 info" text="Seit einer Woche und drei Tagen in England"></Label>
 
-                <FlexboxLayout class="m-t-10 m-b-10" flexDirection="row" alignItems="stretch">
-                    <Label [text]="person.location.postcode"></Label>
-                    <Label class="capitalize m-l-5" [text]="person.location.city"></Label>
-                </FlexboxLayout>
+                <Button text="add reaction" class="btn"></Button>
             </FlexboxLayout>
 
-            <ActivityIndicator *ngIf="isLoading " [busy]="isLoading " class="activity-indicator "></ActivityIndicator>
 
-            <!--<StackLayout>
-                <map [street]="person.location.street"></map>
-            </StackLayout>-->
+            <FlexboxLayout class="m-b-10" flexDirection="row" justifyContent="flex-start" width="100%" flexWrap="nowrap">
+                <FlexboxLayout flexWrap="nowrap" justifyContent="center" width="25%">
+                    <Image width="50" src="res://map" stretch="none"></Image>
+                </FlexboxLayout>
 
-        </StackLayout>
+                <FlexboxLayout flexWrap="wrap" width="75%">
+                    <Label [text]="person.location.street + ', '" class="capitalize"></Label>
+                    <Label [text]="person.location.postcode + '&nbsp;'"></Label>
+                    <Label class="capitalize" [text]="person.location.city"></Label>
+                </FlexboxLayout>
+
+            </FlexboxLayout>
+
+
+            <FlexboxLayout class="m-t-30 m-b-10" flexDirection="row" justifyContent="flex-start" width="100%" flexWrap="nowrap">
+                <FlexboxLayout flexWrap="nowrap" justifyContent="center" width="25%">
+                    <Image width="50" src="res://map" stretch="none"></Image>
+                </FlexboxLayout>
+
+                <FlexboxLayout flexWrap="wrap" width="75%">
+
+                </FlexboxLayout>
+
+            </FlexboxLayout>
+
+
+
+            <FlexboxLayout class="m-t-30" flexDirection="row" justifyContent="flex-start" width="100%" flexWrap="nowrap">
+                <FlexboxLayout flexWrap="nowrap" justifyContent="center" width="25%">
+                    <Image width="50" src="res://map" stretch="none"></Image>
+                </FlexboxLayout>
+
+                <FlexboxLayout flexWrap="wrap" width="75%">
+                    <Label [text]="person.email"></Label>
+                </FlexboxLayout>
+
+            </FlexboxLayout>
+
+
+
+        </FlexboxLayout>
+
+        <ActivityIndicator *ngIf="isLoading " [busy]="isLoading " class="activity-indicator "></ActivityIndicator>
     </ScrollView>
 </StackLayout>

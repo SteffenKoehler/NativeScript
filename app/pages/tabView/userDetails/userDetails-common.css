@@ -1,15 +1,40 @@
-Image {
-    width: 200vw;
-    height: 200vw;
-    border-radius: 50;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-}
-
 Label {
     font-size: 20dpi;
 }
 
 .capitalize {
     text-transform: capitalize;
+}
+
+.person-wrapper {
+    background-color: #f8c570;
+    padding-top: 50vw;
+    padding-bottom: 20vw;
+}
+
+.person-wrapper Image {
+    width: 100vw;
+    height: 100vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    border-width: 4;
+    border-radius: 50;
+    border-color: white;
+}
+
+.person-wrapper Label {
+    color: white;
+}
+
+.person-wrapper .info {
+    font-size: 12dpi;
+}
+
+.person-wrapper Button {
+    background-color: white;
+    color: #f8c570;
+    font-size: 18dpi;
+    padding-left: 40vw;
+    padding-right: 40vw;
+    border-radius: 50vw;
 }

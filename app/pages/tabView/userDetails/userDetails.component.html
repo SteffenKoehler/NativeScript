@@ -15,18 +15,18 @@
 
                 <Label class="m-t-5 m-b-20 info" text="Seit einer Woche und drei Tagen in England"></Label>
 
-                <Button text="add reaction" class="btn"></Button>
+                <Button text="add reaction" class="btn" (tap)="onAddReactionButtonTap()"></Button>
             </FlexboxLayout>
 
 
-            <FlexboxLayout class="m-b-10" flexDirection="row" justifyContent="flex-start" width="100%" flexWrap="nowrap">
-                <FlexboxLayout flexWrap="nowrap" justifyContent="center" width="25%">
+            <FlexboxLayout class="m-t-20 m-b-10" flexDirection="row" justifyContent="flex-start" width="100%" flexWrap="nowrap">
+                <FlexboxLayout flexWrap="nowrap" justifyContent="center" alignItems="center" width="25%">
                     <Image width="50" src="res://map" stretch="none"></Image>
                 </FlexboxLayout>
 
-                <FlexboxLayout flexWrap="wrap" width="75%">
+                <FlexboxLayout class="person-details" flexWrap="wrap" width="75%">
                     <Label [text]="person.location.street + ', '" class="capitalize"></Label>
-                    <Label [text]="person.location.postcode + '&nbsp;'"></Label>
+                    <Label class="p-r-5" [text]="person.location.postcode"></Label>
                     <Label class="capitalize" [text]="person.location.city"></Label>
                 </FlexboxLayout>
 
@@ -38,8 +38,8 @@
                     <Image width="50" src="res://map" stretch="none"></Image>
                 </FlexboxLayout>
 
-                <FlexboxLayout flexWrap="wrap" width="75%">
-
+                <FlexboxLayout class="person-details" flexWrap="wrap" width="75%">
+                    <Label [text]="person.cell"></Label>
                 </FlexboxLayout>
 
             </FlexboxLayout>
@@ -51,7 +51,7 @@
                     <Image width="50" src="res://map" stretch="none"></Image>
                 </FlexboxLayout>
 
-                <FlexboxLayout flexWrap="wrap" width="75%">
+                <FlexboxLayout class="person-details" flexWrap="wrap" width="75%">
                     <Label [text]="person.email"></Label>
                 </FlexboxLayout>
 

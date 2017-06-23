@@ -4,7 +4,7 @@
     </ActionBar>
 
     <ScrollView>
-        <FlexboxLayout flexDirection="column" alignItems="center">
+        <FlexboxLayout class="p-b-10" flexDirection="column" alignItems="center">
             <FlexboxLayout flexDirection="column" width="100%" alignItems="center" class="person-wrapper m-b-10">
                 <Image [src]="person.picture.large"></Image>
 
@@ -56,9 +56,6 @@
                 </FlexboxLayout>
 
             </FlexboxLayout>
-
-
-
         </FlexboxLayout>
 
         <ActivityIndicator *ngIf="isLoading " [busy]="isLoading " class="activity-indicator "></ActivityIndicator>

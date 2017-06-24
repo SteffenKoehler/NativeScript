@@ -14,14 +14,16 @@ export class RandomuserService {
 
     numberOfResults: number = 50;
 
-    url = 'https://randomuser.me/api/';
+
 
     getUsers(nationalitie) {
         let headers = new Headers();
+        let url = 'https://randomuser.me/api/';
 
-        this.url = this.url + "?results=" + this.numberOfResults + "&nat=" + nationalitie;
+        url = url + "?results=" + this.numberOfResults + "&nat=" + nationalitie;
 
-        return this.http.get(this.url, {
+
+        return this.http.get(url, {
         })
             .map(res => res.json())
             .map(data => {

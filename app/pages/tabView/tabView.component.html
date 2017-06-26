@@ -1,4 +1,9 @@
 <TabView [selectedIndex]="selectedIndex" (selectedIndexChange)="onIndexChanged($event)" iosIconRenderingMode="alwaysOriginal">
+    <ActionBar [title]="actionBarTitle">
+        <NavigationButton text=""></NavigationButton> <!--android.systemIcon="ic_menu_back"-->
+    </ActionBar>
+
+
     <template tabItem [iconSource]="selectedIndex == 0 ? 'res://map_orange' : 'res://map'">
         <StackLayout>
             <map></map>

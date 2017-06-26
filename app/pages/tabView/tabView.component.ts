@@ -27,6 +27,7 @@ export class TabViewItemsComponent {
     randomUserList: Array<Randomuser> = [];
     randomUserCount: number = 0;
     sliderValue: number;
+    actionBarTitle: string;
 
     constructor(
         private itemService: ItemService,
@@ -47,10 +48,15 @@ export class TabViewItemsComponent {
         let tabView = <TabView>args.object;
         this.selectedIndex = tabView.selectedIndex;
 
-        if(tabView.selectedIndex === 1) {
-                this.getUserList(args);
+
+        if (this.selectedIndex === 0){
+            this.actionBarTitle = "Karte";
+        } else if(this.selectedIndex === 1) {
+            this.actionBarTitle = "Kontakte";
+            this.getUserList(args);
+        } else if (this.selectedIndex === 2){
+            this.actionBarTitle = "Einstellungen";
         }
-        console.log("Selected index changed! New inxed: " + tabView.selectedIndex);
     }
 
     getUserList (args) {

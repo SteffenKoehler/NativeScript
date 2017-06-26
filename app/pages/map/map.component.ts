@@ -56,9 +56,9 @@ export class MapComponent {
         let long = 8.672434;
 
 
-        for (let i = 0; i < 100; i++){
+        for (let i = 0; i < 30; i++){
             var marker = new Marker();
-            marker.position = Position.positionFromLatLng(lat + Math.random(), long + Math.random());
+            marker.position = Position.positionFromLatLng(lat + Math.random() + Math.random(), long + Math.random() + Math.random());
             marker.title = "Heidelberg";
             marker.snippet = "Germany";
             marker.userData = {index: 1};

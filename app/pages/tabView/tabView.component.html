@@ -12,7 +12,7 @@
 
     <template tabItem [iconSource]="selectedIndex == 1 ? 'res://contact_orange' : 'res://contact'">
         <StackLayout>
-            <ListView [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
+            <ListView height="100%" [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
                 <template let-item="item">
 
                     <StackLayout class="p-l-10" orientation="horizontal">
@@ -107,8 +107,8 @@
 
 
                 <GridLayout class="m-15" rows="auto" columns="50 * 50">
-                    <Label class="h3" text="15" textWrap="true" row="0" col="0"></Label>
-                    <Slider #slider minValue="15" maxValue="1000" [(ngModel)]="sliderValue" (valueChange)="newSliderValue(slider.value)" row="0"
+                    <Label class="h3" text="1" textWrap="true" row="0" col="0"></Label>
+                    <Slider #slider minValue="1" maxValue="1000" [(ngModel)]="sliderValue" (valueChange)="newSliderValue(slider.value)" row="0"
                             col="1"></Slider>
                     <Label class="h3" text="1000" textWrap="true" row="0" col="2"></Label>
                 </GridLayout>

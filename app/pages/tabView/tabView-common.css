@@ -17,3 +17,15 @@ TabView {
     android-selected-tab-highlight-color: rgb(244,165,54);
     tab-background-color: rgb(221,232,244);
 }
+
+.favorite-image {
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50;
+}
+
+.favorite-label {
+    background-color: rgb(239,239,244);
+    border: 1vh solid black;
+    padding: 10
+}

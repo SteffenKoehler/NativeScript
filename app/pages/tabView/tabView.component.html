@@ -11,8 +11,9 @@
     </template>
 
     <template tabItem [iconSource]="selectedIndex == 1 ? 'res://contact_orange' : 'res://contact'">
-        <StackLayout>
-            <ListView height="100%" [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
+        <FlexboxLayout flexDirection="column">
+
+            <ListView  [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
                 <template let-item="item">
 
                     <StackLayout class="p-l-10" orientation="horizontal">
@@ -51,8 +52,41 @@
                 </template>
             </ListView>
 
+
             <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
-        </StackLayout>
+
+
+
+            <FlexboxLayout flexDirection="column" height="200">
+
+                <FlexboxLayout class="favorite-label">
+                    <Label text="Favoriten"></Label>
+                </FlexboxLayout>
+
+                <ScrollView orientation="horizontal" backgroundColor="red" >
+
+                    <FlexboxLayout>
+                        <FlexboxLayout flexDirection="column" alignItems="center" *ngFor="let user of randomUserList">
+
+                            <FlexboxLayout class="m-l-5 m-r-5" flexDirection="column" alignItems="center">
+
+                                <Image class="favorite-image" [src]="user.picture.large"></Image>
+                                <Label class="capitalize" [text]="user.name.first"></Label>
+
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+
+                    </FlexboxLayout>
+
+
+
+
+                </ScrollView>
+            </FlexboxLayout>
+
+
+
+        </FlexboxLayout>
     </template>
 
     <template tabItem [iconSource]="selectedIndex == 2 ? 'res://setting_orange' : 'res://setting'">

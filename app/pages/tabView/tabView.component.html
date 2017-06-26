@@ -9,21 +9,6 @@
         <StackLayout>
             <ListView [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
                 <template let-item="item">
-                    <!--<GridLayout columns="auto, auto" rows="auto, *" >
-
-                        <Image col="0" [src]="item.picture.large" ></Image>
-
-                        <GridLayout col="1" columns="*, 2*">
-                            <Label col="0" [text]="item.name.first" <Image >
-                            <Label col="1"[text]="item.name.last"></Label>
-                        </GridLayout>
-
-                    </GridLayout>-->
-
-                    <!--<GridLayout columns="auto, *" rows="auto" (tap)="onUserTab(item)">
-                        <Image [src]="item.picture.large" col="0" rowSpan="2"></Image>
-                        <Label [text]="item.name.first + ' ' + item.name.last"  col="1"></Label>
-                    </GridLayout>-->
 
                     <StackLayout orientation="horizontal">
                         <FlexboxLayout>
@@ -32,29 +17,31 @@
 
                         <FlexboxLayout class="m-l-20" flexDirection="row" width="100%">
                             <ios>
-                                <StackLayout orientation="horizontal">
-                                    <Label class="capitalize" textWrap="false" [text]="item.name.first"></Label>
-                                    <Label class="capitalize m-l-5" textWrap="false" [text]="item.name.last"></Label>
-                                </StackLayout>
+                                <FlexboxLayout class="p-t-15" flexDirection="column">
+                                    <StackLayout orientation="horizontal">
+                                        <Label class="capitalize" textWrap="false" [text]="item.name.first"></Label>
+                                        <Label class="capitalize m-l-5" textWrap="false" [text]="item.name.last"></Label>
+                                    </StackLayout>
+
+                                    <StackLayout orientation="horizontal">
+                                        <Label class="capitalize city" textWrap="false" [text]="item.location.city"></Label>
+                                    </StackLayout>
+                                </FlexboxLayout>
                             </ios>
 
                             <android>
-                                <FlexboxLayout>
-                                    <Label class="capitalize" textWrap="false" [text]="item.name.first"></Label>
-                                    <Label class="capitalize m-l-5" textWrap="false" [text]="item.name.last"></Label>
+                                <FlexboxLayout class="p-t-15" flexDirection="column">
+                                    <FlexboxLayout flexDirection="row">
+                                        <Label class="capitalize" textWrap="false" [text]="item.name.first"></Label>
+                                        <Label class="capitalize m-l-5" textWrap="false" [text]="item.name.last"></Label>
+                                    </FlexboxLayout>
+
+                                    <FlexboxLayout flexDirection="row">
+                                        <Label class="capitalize city" [text]="item.location.city"></Label>
+                                    </FlexboxLayout>
                                 </FlexboxLayout>
                             </android>
-
-                            <!--<FlexboxLayout flexGrow="2" flexDirection="column">
-                                <Label [text]="item.name.first"></Label>
-                                <Label [text]="item.name.last"></Label>
-                            </FlexboxLayout>
-
-                            <FlexboxLayout flexGrow="1">
-                                <Label [text]="item.userGender"></Label>
-                            </FlexboxLayout>-->
                         </FlexboxLayout>
-
                     </StackLayout>
                 </template>
             </ListView>

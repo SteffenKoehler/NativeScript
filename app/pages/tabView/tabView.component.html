@@ -15,7 +15,7 @@
             <ListView [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
                 <template let-item="item">
 
-                    <StackLayout orientation="horizontal">
+                    <StackLayout class="p-l-10" orientation="horizontal">
                         <FlexboxLayout>
                             <Image [src]="item.picture.large" ></Image>
                         </FlexboxLayout>

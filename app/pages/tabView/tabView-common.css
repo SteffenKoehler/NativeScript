@@ -12,3 +12,8 @@ Image {
 .city {
     font-size: 14dpi;
 }
+
+TabView {
+    android-selected-tab-highlight-color: rgb(244,165,54);
+    tab-background-color: rgb(221,232,244);
+}

@@ -16,8 +16,8 @@ registerElement('MapView', () => MapView);
 @Component({
     moduleId: module.id,
     selector: 'map',
-    templateUrl: 'map.html',
-    styleUrls: ['map.css'],
+    templateUrl: './map.html',
+    styleUrls: ['./map.css'],
 })
 export class MapComponent {
 

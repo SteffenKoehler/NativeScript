@@ -11,7 +11,7 @@ import { ItemsComponent } from "./pages/item/items.component";
 import { ItemDetailComponent } from "./pages/item/item-detail.component";
 
 import { UserData } from "./providers/userData/userData";
-import { MapComponent } from "./pages/map/map.component";
+import { MapComponent } from "./pages/tabView/map/map.component";
 
 
 import * as platform from "platform";

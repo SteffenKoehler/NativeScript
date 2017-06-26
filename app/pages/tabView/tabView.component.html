@@ -53,38 +53,24 @@
             </ListView>
 
 
-            <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
-
-
-
-            <FlexboxLayout flexDirection="column" height="200">
-
-                <FlexboxLayout class="favorite-label">
-                    <Label text="Favoriten"></Label>
+            <FlexboxLayout *ngIf="listLoaded" flexDirection="column" height="230">
+                <FlexboxLayout class="favorite-label" height="50" alignItems="center">
+                    <Label class="p-l-10" text="Favoriten"></Label>
                 </FlexboxLayout>
 
-                <ScrollView orientation="horizontal" backgroundColor="red" >
-
+                <ScrollView orientation="horizontal" height="100%">
                     <FlexboxLayout>
-                        <FlexboxLayout flexDirection="column" alignItems="center" *ngFor="let user of randomUserList">
-
-                            <FlexboxLayout class="m-l-5 m-r-5" flexDirection="column" alignItems="center">
-
+                        <FlexboxLayout  flexDirection="column" alignItems="center" *ngFor="let user of randomUserList">
+                            <FlexboxLayout class="m-l-10 m-r-10" flexDirection="column" alignItems="center">
                                 <Image class="favorite-image" [src]="user.picture.large"></Image>
-                                <Label class="capitalize" [text]="user.name.first"></Label>
-
+                                <Label class="capitalize favorite-label-name" [text]="user.name.first"></Label>
                             </FlexboxLayout>
                         </FlexboxLayout>
-
                     </FlexboxLayout>
-
-
-
-
                 </ScrollView>
             </FlexboxLayout>
 
-
+            <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
 
         </FlexboxLayout>
     </template>

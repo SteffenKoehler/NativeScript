@@ -17,11 +17,12 @@
                 <template let-item="item">
 
                     <StackLayout class="p-l-10" orientation="horizontal">
+
                         <FlexboxLayout>
                             <Image [src]="item.picture.large" ></Image>
                         </FlexboxLayout>
 
-                        <FlexboxLayout class="m-l-20" flexDirection="row" width="100%">
+                        <FlexboxLayout class="m-l-20" flexDirection="row" width="70%">
                             <ios>
                                 <FlexboxLayout class="p-t-15" flexDirection="column">
                                     <StackLayout orientation="horizontal">
@@ -48,6 +49,13 @@
                                 </FlexboxLayout>
                             </android>
                         </FlexboxLayout>
+
+
+                        <FlexboxLayout flexGrow="1" justifyContent="flex-end">
+                            <Image width="20" src="res://world"></Image>
+                        </FlexboxLayout>
+
+
                     </StackLayout>
                 </template>
             </ListView>

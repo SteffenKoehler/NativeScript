@@ -47,7 +47,9 @@ export class RandomuserService {
                         postcode: randomUser.location.postcode
                     };
 
-                    randomUserList.push(new Randomuser(randomUser.gender, name, picture, location, randomUser.email, randomUser.cell));
+                    let favorite = location.city.length > 8;
+
+                    randomUserList.push(new Randomuser(randomUser.gender, name, picture, location, randomUser.email, randomUser.cell, favorite));
                 });
                 return randomUserList;
             })

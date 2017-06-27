@@ -20,7 +20,8 @@ export class Randomuser {
             postcode: number
         },
         public email: string,
-        public cell: string
+        public cell: string,
+        public favorite: boolean
 
     ) {}
 }

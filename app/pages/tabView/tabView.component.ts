@@ -25,6 +25,7 @@ export class TabViewItemsComponent {
     listLoaded = false;
     items: Item[];
     randomUserList: Array<Randomuser> = [];
+    favoriteUserList: Array<Randomuser> = [];
     randomUserCount: number = 0;
     sliderValue: number;
     actionBarTitle: string;
@@ -33,8 +34,7 @@ export class TabViewItemsComponent {
         private itemService: ItemService,
         private randomUserService: RandomuserService,
         private router: Router,
-        private userData : UserData
-
+        private userData : UserData,
     ) {}
 
     ngOnInit(): void {
@@ -64,12 +64,17 @@ export class TabViewItemsComponent {
             this.isLoading = true;
             this.listLoaded = false;
             this.randomUserList = [];
+            this.favoriteUserList = [];
 
             this.randomUserCount = this.randomUserService.numberOfResults;
             this.randomUserService.getUsers('de')
                 .subscribe(loadedRandomusers => {
                     loadedRandomusers.forEach((randomUser) => {
                         this.randomUserList.push(randomUser);
+
+                        if(randomUser.favorite){
+                            this.favoriteUserList.push(randomUser);
+                        }
                     });
                     this.isLoading = false;
                     this.listLoaded = true;
@@ -80,6 +85,22 @@ export class TabViewItemsComponent {
     onUserTab(args){
         this.userData.storage = this.randomUserList[args.index];
         this.router.navigate(["userDetails"]);
+    }
+
+    onFavoriteIconTap(user){
+
+        if(!user.favorite){
+            this.favoriteUserList.unshift(user);
+            user.favorite = true;
+        } else if (user.favorite){
+            let userIndex = this.favoriteUserList.indexOf(user);
+
+            if(userIndex > -1){
+                this.favoriteUserList.splice(userIndex, 1);
+                user.favorite = false;
+            }
+        }
+
     }
 
     newSliderValue(newValue) {

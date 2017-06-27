@@ -18,6 +18,8 @@
 
                     <FlexboxLayout class="p-l-10" flexDirection="row">
 
+
+
                         <FlexboxLayout width="70">
                             <Image [src]="item.picture.large" ></Image>
                         </FlexboxLayout>
@@ -51,8 +53,8 @@
                         </FlexboxLayout>
 
 
-                        <FlexboxLayout width="50">
-                            <Image width="20" src="res://world"></Image>
+                        <FlexboxLayout width="50" (onTap)="onFavoriteIconTap(item)">
+                            <Image width="20" [src]="item.favorite ? '~/images/heart_filled.png' : '~/images/heart_empty.png'"></Image>
                         </FlexboxLayout>
 
 
@@ -63,12 +65,12 @@
 
             <FlexboxLayout *ngIf="listLoaded" flexDirection="column" height="230">
                 <FlexboxLayout class="favorite-label" height="50" alignItems="center">
-                    <Label class="p-l-10" text="Favoriten"></Label>
+                    <Label class="p-l-10" [text]="'Favoriten (' + favoriteUserList.length + ')'"></Label>
                 </FlexboxLayout>
 
                 <ScrollView orientation="horizontal" height="100%">
                     <FlexboxLayout>
-                        <FlexboxLayout  flexDirection="column" alignItems="center" *ngFor="let user of randomUserList">
+                        <FlexboxLayout  flexDirection="column" alignItems="center" *ngFor="let user of favoriteUserList">
                             <FlexboxLayout class="m-l-10 m-r-10" flexDirection="column" alignItems="center">
                                 <Image class="favorite-image" [src]="user.picture.large"></Image>
                                 <Label class="capitalize favorite-label-name" [text]="user.name.first"></Label>

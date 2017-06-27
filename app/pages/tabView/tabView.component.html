@@ -78,7 +78,8 @@
                 </ScrollView>
             </FlexboxLayout>
 
-            <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+
+            <ActivityIndicator #activityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'"s width="30" height="30"></ActivityIndicator>
 
         </FlexboxLayout>
     </template>

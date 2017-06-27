@@ -103,6 +103,11 @@ export class TabViewItemsComponent {
 
     }
 
+    onFavoriteUserTap(index) {
+        this.userData.storage = this.favoriteUserList[index];
+        this.router.navigate(["userDetails"]);
+    }
+
     newSliderValue(newValue) {
         this.randomUserService.numberOfResults = Math.round(newValue);
     }

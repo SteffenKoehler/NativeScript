@@ -16,13 +16,13 @@
             <ListView  [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
                 <template let-item="item">
 
-                    <StackLayout class="p-l-10" orientation="horizontal">
+                    <FlexboxLayout class="p-l-10" flexDirection="row">
 
-                        <FlexboxLayout>
+                        <FlexboxLayout width="70">
                             <Image [src]="item.picture.large" ></Image>
                         </FlexboxLayout>
 
-                        <FlexboxLayout class="m-l-20" flexDirection="row" width="70%">
+                        <FlexboxLayout class="m-l-20" flexDirection="row" flexGrow="1">
                             <ios>
                                 <FlexboxLayout class="p-t-15" flexDirection="column">
                                     <StackLayout orientation="horizontal">
@@ -51,12 +51,12 @@
                         </FlexboxLayout>
 
 
-                        <FlexboxLayout flexGrow="1" justifyContent="flex-end">
+                        <FlexboxLayout width="50">
                             <Image width="20" src="res://world"></Image>
                         </FlexboxLayout>
 
 
-                    </StackLayout>
+                    </FlexboxLayout>
                 </template>
             </ListView>
 

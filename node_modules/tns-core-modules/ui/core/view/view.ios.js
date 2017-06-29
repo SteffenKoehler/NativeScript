@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var background_1 = require("../../styling/background");
 var view_common_1 = require("./view-common");
 var style_properties_1 = require("../../styling/style-properties");
+var profiling_1 = require("../../../profiling");
 __export(require("./view-common"));
 var PFLAG_FORCE_LAYOUT = 1;
 var PFLAG_MEASURED_DIMENSION_SET = 1 << 1;
@@ -69,6 +70,10 @@ var View = (function (_super) {
         }
         if (sizeChanged) {
             this._onSizeChanged();
+        }
+        else if (this._nativeBackgroundState === "invalid") {
+            var background = this.style.backgroundInternal;
+            this._redrawNativeBackground(background);
         }
         this._privateFlags &= ~PFLAG_FORCE_LAYOUT;
     };
@@ -174,8 +179,9 @@ var View = (function (_super) {
             return;
         }
         var background = this.style.backgroundInternal;
-        if (!background.isEmpty() && this[style_properties_1.backgroundInternalProperty.setNative]) {
-            this[style_properties_1.backgroundInternalProperty.setNative](background);
+        var backgroundDependsOnSize = background.image || !background.hasUniformBorder();
+        if (this._nativeBackgroundState === "invalid" || (this._nativeBackgroundState === "drawn" && backgroundDependsOnSize)) {
+            this._redrawNativeBackground(background);
         }
         var clipPath = this.style.clipPath;
         if (clipPath !== "" && this[style_properties_1.clipPathProperty.setNative]) {
@@ -216,7 +222,7 @@ var View = (function (_super) {
         this._suspendCATransaction = false;
     };
     View.prototype._isPresentationLayerUpdateSuspeneded = function () {
-        return this._suspendCATransaction || this._batchUpdateScope;
+        return this._suspendCATransaction || this._suspendNativeUpdatesCount;
     };
     View.prototype[view_common_1.isEnabledProperty.getDefault] = function () {
         var nativeView = this.nativeView;
@@ -323,6 +329,12 @@ var View = (function (_super) {
         return this.nativeView.backgroundColor;
     };
     View.prototype[style_properties_1.backgroundInternalProperty.setNative] = function (value) {
+        this._nativeBackgroundState = "invalid";
+        if (this.isLayoutValid) {
+            this._redrawNativeBackground(value);
+        }
+    };
+    View.prototype._redrawNativeBackground = function (value) {
         var _this = this;
         var updateSuspended = this._isPresentationLayerUpdateSuspeneded();
         if (!updateSuspended) {
@@ -340,6 +352,7 @@ var View = (function (_super) {
         if (!updateSuspended) {
             CATransaction.commit();
         }
+        this._nativeBackgroundState = "drawn";
     };
     View.prototype._setNativeClipToBounds = function () {
         var backgroundInternal = this.style.backgroundInternal;
@@ -347,7 +360,14 @@ var View = (function (_super) {
     };
     return View;
 }(view_common_1.ViewCommon));
+__decorate([
+    profiling_1.profile
+], View.prototype, "layout", null);
+__decorate([
+    profiling_1.profile
+], View.prototype, "onMeasure", null);
 exports.View = View;
+View.prototype._nativeBackgroundState = "unset";
 var CustomLayoutView = (function (_super) {
     __extends(CustomLayoutView, _super);
     function CustomLayoutView() {

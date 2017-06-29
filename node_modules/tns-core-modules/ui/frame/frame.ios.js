@@ -2,6 +2,7 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
+var profiling_1 = require("../../profiling");
 var frame_common_1 = require("./frame-common");
 var transition_1 = require("../transition");
 var uiUtils = require("tns-core-modules/ui/utils");
@@ -310,6 +311,12 @@ var Frame = (function (_super) {
     };
     return Frame;
 }(frame_common_1.FrameBase));
+__decorate([
+    profiling_1.profile
+], Frame.prototype, "onLoaded", null);
+__decorate([
+    profiling_1.profile
+], Frame.prototype, "_navigateCore", null);
 exports.Frame = Frame;
 var transitionDelegates = new Array();
 var TransitionDelegate = (function (_super) {
@@ -508,6 +515,9 @@ var UINavigationControllerImpl = (function (_super) {
     };
     return UINavigationControllerImpl;
 }(UINavigationController));
+__decorate([
+    profiling_1.profile
+], UINavigationControllerImpl.prototype, "viewDidLoad", null);
 function _getTransitionId(nativeTransition, transitionType) {
     var name;
     switch (nativeTransition) {

@@ -71,7 +71,7 @@
                 <ScrollView orientation="horizontal" height="100%">
                     <FlexboxLayout>
                         <FlexboxLayout  flexDirection="column" alignItems="center" *ngFor="let user of favoriteUserList; let listIndex = index">
-                            <FlexboxLayout class="m-l-10 m-r-10" flexDirection="column" alignItems="center" (onTap)="onFavoriteUserTap(listIndex)">
+                            <FlexboxLayout class="m-l-5 m-r-5" flexDirection="column" alignItems="center" (onTap)="onFavoriteUserTap(listIndex)">
                                 <Image class="favorite-image" [src]="user.picture.large"></Image>
                                 <Label class="capitalize favorite-label-name" [text]="user.name.first"></Label>
                             </FlexboxLayout>

@@ -21,7 +21,7 @@
 
 
                         <FlexboxLayout width="70">
-                            <Image [src]="item.picture.large" ></Image>
+                            <Image [src]="item.picture.thumbnail" ></Image>
                         </FlexboxLayout>
 
                         <FlexboxLayout class="m-l-20" flexDirection="row" flexGrow="1">
@@ -72,7 +72,7 @@
                     <FlexboxLayout>
                         <FlexboxLayout  flexDirection="column" alignItems="center" *ngFor="let user of favoriteUserList; let listIndex = index">
                             <FlexboxLayout class="m-l-5 m-r-5" flexDirection="column" alignItems="center" (onTap)="onFavoriteUserTap(listIndex)">
-                                <Image class="favorite-image" [src]="user.picture.large"></Image>
+                                <Image class="favorite-image" [src]="user.picture.thumbnail"></Image>
                                 <Label class="capitalize favorite-label-name" [text]="user.name.first"></Label>
                             </FlexboxLayout>
                         </FlexboxLayout>
@@ -80,8 +80,7 @@
                 </ScrollView>
             </FlexboxLayout>
 
-
-            <ActivityIndicator #activityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'"s width="30" height="30"></ActivityIndicator>
+            <ActivityIndicator #activityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" width="30" height="30"></ActivityIndicator>
 
         </FlexboxLayout>
     </ng-template>

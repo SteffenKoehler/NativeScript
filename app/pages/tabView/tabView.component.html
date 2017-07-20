@@ -11,14 +11,14 @@
     </ng-template>
 
     <ng-template tabItem [iconSource]="selectedIndex == 1 ? 'res://contact_orange' : 'res://contact'">
+
         <FlexboxLayout flexDirection="column">
             <ListView  [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
                 <ng-template let-item="item">
-
                     <FlexboxLayout flexDirection="row">
 
                         <FlexboxLayout class="user-thumbnail">
-                            <Label [text]="item.initials"></Label>
+                            <Label textWrap="false" [text]="item.initial"></Label>
                         </FlexboxLayout>
 
                         <FlexboxLayout class="user-details">
@@ -33,7 +33,6 @@
                             </FlexboxLayout>
 
                         </FlexboxLayout>
-
 
                         <FlexboxLayout width="50" (onTap)="onFavoriteIconTap(item)">
                             <Image width="20" [src]="item.favorite ? '~/images/heart2_filled.png' : '~/images/heart2_empty.png'"></Image>

@@ -11,8 +11,7 @@
     </ng-template>
 
     <ng-template tabItem [iconSource]="selectedIndex == 1 ? 'res://contact_orange' : 'res://contact'">
-        <FlexboxLayout>
-
+        <FlexboxLayout flexDirection="column">
             <ListView  [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
                 <ng-template let-item="item">
 
@@ -40,13 +39,12 @@
                             <Image width="20" [src]="item.favorite ? '~/images/heart2_filled.png' : '~/images/heart2_empty.png'"></Image>
                         </FlexboxLayout>
 
-
                     </FlexboxLayout>
                 </ng-template>
             </ListView>
 
-            <ActivityIndicator #activityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" width="30" height="30"></ActivityIndicator>
 
+            <ActivityIndicator #activityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" width="30" height="30"></ActivityIndicator>
         </FlexboxLayout>
     </ng-template>
 

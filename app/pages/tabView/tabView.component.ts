@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { Router} from "@angular/router";
 import { StackLayout } from "ui/layouts/stack-layout";
 
 import { TabView, SelectedIndexChangedEventData, TabViewItem } from "ui/tab-view";
@@ -10,6 +9,7 @@ import { Randomuser } from "../../shared/user/randomUser";
 import { RandomuserService } from "../../shared/user/randomUser.service";
 
 import { UserData } from "../../providers/userData/userData";
+import {RouterExtensions} from "nativescript-angular";
 
 
 @Component({
@@ -33,7 +33,7 @@ export class TabViewItemsComponent {
     constructor(
         private itemService: ItemService,
         private randomUserService: RandomuserService,
-        private router: Router,
+        private routerExtensions: RouterExtensions,
         private userData : UserData,
     ) {}
 
@@ -84,7 +84,7 @@ export class TabViewItemsComponent {
 
     onUserTab(args){
         this.userData.storage = this.randomUserList[args.index];
-        this.router.navigate(["userDetails"]);
+        this.routerExtensions.navigate(["userDetails"]);
     }
 
     onFavoriteIconTap(user){
@@ -105,7 +105,7 @@ export class TabViewItemsComponent {
 
     onFavoriteUserTap(index) {
         this.userData.storage = this.favoriteUserList[index];
-        this.router.navigate(["userDetails"]);
+        this.routerExtensions.navigate(["userDetails"]);
     }
 
     newSliderValue(newValue) {

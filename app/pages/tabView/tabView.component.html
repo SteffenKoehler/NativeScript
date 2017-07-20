@@ -135,15 +135,15 @@
                     <Switch></Switch>
                 </FlexboxLayout>
 
-
-                <GridLayout class="m-15" rows="auto" columns="50 * 50">
-                    <Label class="h3" text="1" textWrap="true" row="0" col="0"></Label>
-                    <Slider #slider minValue="1" maxValue="1000" [(ngModel)]="sliderValue" (valueChange)="newSliderValue(slider.value)" row="0"
-                            col="1"></Slider>
-                    <Label class="h3" text="1000" textWrap="true" row="0" col="2"></Label>
-                </GridLayout>
+                <FlexboxLayout class="m-15" flexDirection="row">
+                    <Label class="h3" text="1" textWrap="true" width="100"></Label>
+                    <Slider flexGrow="1" #slider minValue="1" maxValue="1000" [(ngModel)]="sliderValue" (valueChange)="newSliderValue(slider.value)"></Slider>
+                    <Label class="h3" text="1000" textWrap="true" width="120"></Label>
+                </FlexboxLayout>
 
             </FlexboxLayout>
         </StackLayout>
     </ng-template>
+
+
 </TabView>

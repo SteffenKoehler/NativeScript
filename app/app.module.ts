@@ -15,6 +15,7 @@ import { MapComponent } from "./pages/tabView/map/map.component";
 
 
 import * as platform from "platform";
+import { ListViewComponent } from './pages/listView/listView.component';
 declare var GMSServices: any;
 
 if(platform.isIOS) {
@@ -37,7 +38,8 @@ if(platform.isIOS) {
         ItemDetailComponent,
         TabViewItemsComponent,
         UserDetailsComponent,
-        MapComponent
+        MapComponent,
+        ListViewComponent
     ],
     providers: [
         ItemService,

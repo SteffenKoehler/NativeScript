@@ -1,0 +1,46 @@
+TabView {
+    background-color: #7FD3CB;
+}
+
+ListView {
+    margin: 20;
+    background-color: rgb(165, 224, 218);
+}
+
+
+.user-thumbnail {
+    width: 34vw;
+    height: 34vw;
+    border-radius: 50vw;
+    margin: 10vw;
+    background-color: #69AAA4;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-thumbnail Label {
+    color: #7FD3CB;
+}
+
+
+.user-details {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-details .name {
+    color: #578C87;
+}
+
+.user-details .city {
+    color: #ffffff;
+    margin-left: 100vw;
+    font-size: 12dpi;
+}
+
+.user-details Label {
+    text-transform: capitalize;
+}
+
+

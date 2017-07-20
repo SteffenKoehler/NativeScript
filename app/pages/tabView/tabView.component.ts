@@ -12,6 +12,7 @@ import { UserData } from "../../providers/userData/userData";
 import {RouterExtensions} from "nativescript-angular";
 
 
+
 @Component({
     moduleId: module.id,
     templateUrl: "./tabView.component.html",
@@ -35,7 +36,10 @@ export class TabViewItemsComponent {
         private randomUserService: RandomuserService,
         private routerExtensions: RouterExtensions,
         private userData : UserData,
-    ) {}
+
+    ) {
+
+    }
 
     ngOnInit(): void {
         this.selectedIndex = 1;

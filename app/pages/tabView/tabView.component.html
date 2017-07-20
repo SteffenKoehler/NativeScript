@@ -1,8 +1,34 @@
-<TabView [selectedIndex]="selectedIndex" (selectedIndexChange)="onIndexChanged($event)" iosIconRenderingMode="alwaysOriginal">
-    <ActionBar [title]="actionBarTitle">
-        <NavigationButton text=""></NavigationButton> <!--android.systemIcon="ic_menu_back"-->
-    </ActionBar>
+<StackLayout>
+    <FlexboxLayout>
+        <FlexboxLayout flexGrow="1">
+            <Label text="Favoriten"></Label>
+        </FlexboxLayout>
 
+        <FlexboxLayout flexGrow="1">
+            <Label text="Kontakte"></Label>
+        </FlexboxLayout>
+
+        <FlexboxLayout flexGrow="1">
+            <Label text="Karte"></Label>
+        </FlexboxLayout>
+
+        <FlexboxLayout flexGrow="1">
+            <Label text="Set"></Label>
+        </FlexboxLayout>
+
+    </FlexboxLayout>
+
+
+
+    <ns-listView></ns-listView>
+
+
+</StackLayout>
+
+
+
+
+<!--<TabView [selectedIndex]="selectedIndex" (selectedIndexChange)="onIndexChanged($event)" iosIconRenderingMode="alwaysOriginal">
 
     <ng-template tabItem [iconSource]="selectedIndex == 0 ? 'res://map_orange' : 'res://map'">
         <StackLayout>
@@ -18,7 +44,7 @@
                     <FlexboxLayout flexDirection="row">
 
                         <FlexboxLayout class="user-thumbnail">
-                            <Label textWrap="false" [text]="item.initial"></Label>
+                            <Label textWrap="false" [text]="item.initials"></Label>
                         </FlexboxLayout>
 
                         <FlexboxLayout class="user-details">
@@ -50,9 +76,9 @@
     <ng-template tabItem [iconSource]="selectedIndex == 2 ? 'res://setting_orange' : 'res://setting'">
         <StackLayout>
             <FlexboxLayout flexDirection="column">
-                <!-- Reverse the natural flow of items -->
+                &lt;!&ndash; Reverse the natural flow of items &ndash;&gt;
                 <FlexboxLayout height="22" flexDirection="row-reverse">
-                    <!-- Use even flexGrow to achieve uniform grid -->
+                    &lt;!&ndash; Use even flexGrow to achieve uniform grid &ndash;&gt;
                     <Label text="1" backgroundColor="#EEEEEE" flexGrow="1" id="one"></Label>
                     <Label text="2" backgroundColor="#DDDDDD" flexGrow="1"></Label>
                     <Label text="3" backgroundColor="#CCCCCC" flexGrow="1"></Label>
@@ -61,15 +87,15 @@
                     <Label text="6" backgroundColor="#999999" flexGrow="1" id="six"></Label>
                 </FlexboxLayout>
 
-                <!-- Set flexGrow to accomodate into any extra space -->
+                &lt;!&ndash; Set flexGrow to accomodate into any extra space &ndash;&gt;
                 <ScrollView flexGrow="1" id="scrollview">
 
-                    <!-- Wrap excessive items on new lines -->
+                    &lt;!&ndash; Wrap excessive items on new lines &ndash;&gt;
                     <FlexboxLayout flexWrap="true" alignContent="flex-start">
 
                         <Label textWrap="true" text="Sed aliquet diam sed augue vestibulum scelerisque." id="title"></Label>
 
-                        <!-- Use flexWrapBefore to control explicit line wrapping -->
+                        &lt;!&ndash; Use flexWrapBefore to control explicit line wrapping &ndash;&gt;
                         <Label text="Gihub issue labels:" flexWrapBefore="true" fontSize="11"></Label>
 
                         <Label text="S: High" flexWrapBefore="true" borderRadius="5" backgroundColor="red" margin="2" id="firstlabel"></Label>
@@ -87,7 +113,7 @@
                 </ScrollView>
                 <FlexboxLayout>
                     <Button text="&lt;" width="50" backgroundColor="gray"></Button>
-                    <!-- Set flexGrow to 1 accomodate into any extra space -->
+                    &lt;!&ndash; Set flexGrow to 1 accomodate into any extra space &ndash;&gt;
                     <Button text="reactions" flexGrow="1" backgroundColor="darkgray"></Button>
                     <Button text="&gt;" width="50" backgroundColor="gray"></Button>
                 </FlexboxLayout>
@@ -108,4 +134,4 @@
     </ng-template>
 
 
-</TabView>
+</TabView>-->

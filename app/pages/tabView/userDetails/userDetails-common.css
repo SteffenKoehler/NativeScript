@@ -1,58 +1,66 @@
-Label {
-    font-size: 20dpi;
+StackLayout {
+    background-color: #7FD3CB;
 }
 
 .capitalize {
     text-transform: capitalize;
 }
 
-.person-wrapper {
-    background-color: #f8c570;
-    padding-top: 50vw;
-    padding-bottom: 20vw;
+.details-wrapper {
+    background-color: rgb(165, 224, 218);
 }
 
-.person-wrapper Image {
-    width: 100vw;
-    height: 100vw;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    border-width: 4;
-    border-radius: 50;
-    border-color: white;
+.background-img{
+    width: 100%;
 }
 
-.person-wrapper Label {
-    color: white;
+.background-img Image {
+    opacity: 0.4;
+    -webkit-filter: grayscale(80%); /* Google Chrome, Safari 6+ & Opera 15+ */
+    filter: grayscale(80%); /* Microsoft Edge and Firefox 35+ */
 }
 
-.person-wrapper .info {
-    font-size: 12dpi;
+.user-details {
+    z-index: 10;
 }
 
-.person-wrapper Button {
-    background-color: white;
-    color: #f8c570;
-    font-size: 18dpi;
-    padding-left: 40vw;
-    padding-right: 40vw;
-    border-radius: 50vw;
-}
-
-.person-details {
-
-}
-
-.person-details Label {
-    font-size: 14dpi;
-    color: #4a4a4a;
-}
-
-.separator {
-    margin-top: 30;
-    margin-bottom: 30;
-    width: 90%;
-    height: 1;
+.user-details Image {
+    width: 150vw;
+    height: 150vw;
+    margin-top: -120vh;
     border-width: 2;
-    border-color: #C8C7CC;
+    border-radius: 150;
+    border-color: #578C87;
+}
+
+.light-color {
+    background-color: rgb(181, 228, 223);
+}
+
+.user-name {
+    margin-bottom: 20;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-name .name Label{
+    margin-top: 10;
+    text-transform: capitalize;
+    color: #ffffff;
+    font-size: 25dpi;
+}
+
+.user-name .info {
+    color: #578C87;
+}
+
+.user-information {
+    padding-right: 5;
+    height: 65vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-information Label {
+    color: #578C87;
 }

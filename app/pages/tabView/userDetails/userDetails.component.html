@@ -1,66 +1,60 @@
 <StackLayout>
-    <ActionBar title="Kontakte">
-        <NavigationButton text=""></NavigationButton> <!--android.systemIcon="ic_menu_back"-->
-    </ActionBar>
-
     <ScrollView>
-        <FlexboxLayout class="p-b-10" flexDirection="column" alignItems="center">
-            <FlexboxLayout flexDirection="column" width="100%" alignItems="center" class="person-wrapper m-b-30">
-                <Image [src]="person.picture.large"></Image>
+        <FlexboxLayout class="details-wrapper m-20" flexDirection="column" alignItems="center">
+            <Button></Button>
 
-                <FlexboxLayout flexDirection="row" class="m-t-10">
-                    <Label class="capitalize" [text]="person.name.first"></Label>
-                    <Label class="capitalize m-l-5" [text]="person.name.last"></Label>
+
+            <StackLayout class="background-img">
+                <Image [src]="person.picture.large"></Image>
+            </StackLayout>
+
+            <FlexboxLayout class="user-details">
+                <Image [src]="person.picture.large"></Image>
+            </FlexboxLayout>
+
+            <FlexboxLayout class="user-name">
+                <FlexboxLayout class="name">
+                    <Label textWrap="false" [text]="person.name.first"></Label>
+                    <Label class="m-l-5" textWrap="false" [text]="person.name.last"></Label>
                 </FlexboxLayout>
 
-                <Label class="m-t-5 m-b-20 info" text="Seit einer Woche und drei Tagen in England"></Label>
-                <Button text="add reaction" class="btn" (tap)="onAddReactionButtonTap()"></Button>
+                <Label class="info" text="Seit 9 Monaten und 6 Tagen in Spanien"></Label>
             </FlexboxLayout>
 
 
-            <FlexboxLayout class="p-r-10" flexDirection="row" justifyContent="flex-start" width="100%" flexWrap="nowrap">
+            <FlexboxLayout class="user-information light-color" width="100%">
                 <FlexboxLayout flexWrap="nowrap" justifyContent="center" alignItems="center" width="20%">
-                    <Image width="20" src="res://map2"></Image>
+                    <Image width="20" src="~/images/user-details/world.png"></Image>
                 </FlexboxLayout>
 
-                <FlexboxLayout class="person-details" flexWrap="wrap" width="80%">
+                <FlexboxLayout flexWrap="wrap" width="80%">
                     <Label [text]="person.location.street + ', '" class="capitalize"></Label>
                     <Label class="p-r-5" [text]="person.location.postcode"></Label>
-                    <Label class="capitalize" [text]="person.location.city"></Label>
+                    <Label [text]="person.location.city" class="capitalize"></Label>
                 </FlexboxLayout>
             </FlexboxLayout>
 
-
-            <FlexboxLayout class="separator"></FlexboxLayout>
-
-
-            <FlexboxLayout flexDirection="row" justifyContent="flex-start" width="100%" flexWrap="nowrap">
-                <FlexboxLayout flexWrap="nowrap" justifyContent="center" width="20%">
-                    <Image width="20" src="res://phone" ></Image>
+            <FlexboxLayout class="user-information" flexDirection="row" width="100%">
+                <FlexboxLayout flexWrap="nowrap" justifyContent="center" alignItems="center" width="20%">
+                    <Image width="20" src="~/images/user-details/phone.png" ></Image>
                 </FlexboxLayout>
 
-                <FlexboxLayout class="person-details" flexWrap="wrap" width="80%">
+                <FlexboxLayout flexWrap="wrap" width="80%">
                     <Label [text]="person.cell"></Label>
                 </FlexboxLayout>
             </FlexboxLayout>
 
 
-            <FlexboxLayout class="separator"></FlexboxLayout>
 
-
-            <FlexboxLayout flexDirection="row" justifyContent="flex-start" width="100%" flexWrap="nowrap">
-                <FlexboxLayout flexWrap="nowrap" justifyContent="center" width="20%">
-                    <Image height="20" src="res://world" ></Image>
+            <FlexboxLayout class="user-information light-color" width="100%">
+                <FlexboxLayout flexWrap="nowrap" justifyContent="center" alignItems="center" width="20%">
+                    <Image height="20" src="~/images/user-details/mail.png" ></Image>
                 </FlexboxLayout>
 
-                <FlexboxLayout class="person-details" flexWrap="wrap" width="80%">
+                <FlexboxLayout flexWrap="wrap" width="80%">
                     <Label [text]="person.email"></Label>
                 </FlexboxLayout>
             </FlexboxLayout>
-
-
-            <FlexboxLayout class="separator"></FlexboxLayout>
-
 
         </FlexboxLayout>
 

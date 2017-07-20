@@ -1,4 +1,4 @@
-<FlexboxLayout backgroundColor="red" flexDirection="column">
+<FlexboxLayout class="wrapper" flexDirection="column">
     <ListView  [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
         <ng-template let-item="item">
             <FlexboxLayout flexDirection="row">

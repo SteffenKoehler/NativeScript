@@ -70,6 +70,7 @@ export class TabViewItemsComponent {
             this.randomUserService.getUsers('de')
                 .subscribe(loadedRandomusers => {
                     loadedRandomusers.forEach((randomUser) => {
+                        randomUser.initials = randomUser.name.first.charAt(0).toLocaleUpperCase() + randomUser.name.last.charAt(0).toLocaleUpperCase();
                         this.randomUserList.push(randomUser);
 
                         if(randomUser.favorite){

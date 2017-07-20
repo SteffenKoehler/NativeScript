@@ -8,36 +8,39 @@ ListView {
 }
 
 
-.capitalize {
+.user-thumbnail {
+    width: 34vw;
+    height: 34vw;
+    border-radius: 50vw;
+    margin: 10vw;
+    background-color: #69AAA4;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-thumbnail Label {
+    color: #7FD3CB;
+}
+
+
+.user-details {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-details .name {
+    color: #578C87;
+}
+
+.user-details .city {
+    color: #ffffff;
+    margin-left: 80vw;
+    font-size: 12dpi;
+}
+
+.user-details Label {
     text-transform: capitalize;
 }
 
-Image {
-    width: 50vw;
-    height: 50vw;
-    border-radius: 45;
-    margin: 10;
-}
 
-.city {
-    font-size: 14dpi;
-}
-
-TabView {
-    android-selected-tab-highlight-color: rgb(244,165,54);
-    tab-background-color: rgb(221,232,244);
-}
-
-.favorite-image {
-    width: 50vw;
-    height: 50vw;
-    border-radius: 50;
-}
-
-.favorite-label {
-    background-color: rgb(239,239,244);
-}
-
-.favorite-label-name {
-    font-size: 12dpi;
-}

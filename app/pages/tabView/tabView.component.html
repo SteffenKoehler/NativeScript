@@ -11,43 +11,28 @@
     </ng-template>
 
     <ng-template tabItem [iconSource]="selectedIndex == 1 ? 'res://contact_orange' : 'res://contact'">
-        <FlexboxLayout flexDirection="column">
+        <FlexboxLayout>
 
             <ListView  [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
                 <ng-template let-item="item">
 
-                    <FlexboxLayout class="p-l-10" flexDirection="row">
+                    <FlexboxLayout flexDirection="row">
 
-                        <FlexboxLayout width="70">
-                            <Image [src]="item.picture.thumbnail" ></Image>
+                        <FlexboxLayout class="user-thumbnail">
+                            <Label [text]="item.initials"></Label>
                         </FlexboxLayout>
 
-                        <FlexboxLayout class="m-l-20" flexDirection="row" flexGrow="1">
-                            <ios>
-                                <FlexboxLayout class="p-t-15" flexDirection="column">
-                                    <StackLayout orientation="horizontal">
-                                        <Label class="capitalize" textWrap="false" [text]="item.name.first"></Label>
-                                        <Label class="capitalize m-l-5" textWrap="false" [text]="item.name.last"></Label>
-                                    </StackLayout>
+                        <FlexboxLayout class="user-details">
 
-                                    <StackLayout orientation="horizontal">
-                                        <Label class="capitalize city" textWrap="false" [text]="item.location.city"></Label>
-                                    </StackLayout>
-                                </FlexboxLayout>
-                            </ios>
+                            <FlexboxLayout class="name">
+                                <Label textWrap="false" [text]="item.name.first"></Label>
+                                <Label class="m-l-5" textWrap="false" [text]="item.name.last"></Label>
+                            </FlexboxLayout>
 
-                            <android>
-                                <FlexboxLayout class="p-t-15" flexDirection="column">
-                                    <FlexboxLayout flexDirection="row">
-                                        <Label class="capitalize" textWrap="false" [text]="item.name.first"></Label>
-                                        <Label class="capitalize m-l-5" textWrap="false" [text]="item.name.last"></Label>
-                                    </FlexboxLayout>
+                            <FlexboxLayout class="city">
+                                <Label textWrap="true" [text]="item.location.city"></Label>
+                            </FlexboxLayout>
 
-                                    <FlexboxLayout flexDirection="row">
-                                        <Label class="capitalize city" [text]="item.location.city"></Label>
-                                    </FlexboxLayout>
-                                </FlexboxLayout>
-                            </android>
                         </FlexboxLayout>
 
 

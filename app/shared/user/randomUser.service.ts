@@ -11,10 +11,7 @@ import { ObservableArray } from 'tns-core-modules/data/observable-array';
 
 @Injectable()
 export class RandomuserService {
-    constructor(private http: Http) {
-
-        console.log('############ init random user service')
-    }
+    constructor(private http: Http) { }
 
     numberOfResults: number = 50;
     makeNewRequest: boolean = true;

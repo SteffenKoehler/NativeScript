@@ -20,7 +20,6 @@ export class ListViewComponent implements OnInit {
     listLoaded = false;
     randomUserList: Array<Randomuser> = [];
     favoriteUserList: Array<Randomuser> = [];
-    randomUserCount: number = 0;
 
     constructor(
         private routerExtensions: RouterExtensions,
@@ -38,28 +37,25 @@ export class ListViewComponent implements OnInit {
     }
 
     getUserList(): void {
-        if(this.randomUserCount !== this.randomUserService.numberOfResults) {
-            this.isLoading = true;
-            this.listLoaded = false;
-            this.randomUserList = [];
-            this.favoriteUserList = [];
+        this.isLoading = true;
+        this.listLoaded = false;
+        this.randomUserList = [];
+        this.favoriteUserList = [];
 
-            this.randomUserCount = this.randomUserService.numberOfResults;
-            this.randomUserService.getUsers('de')
-                .subscribe(loadedRandomusers => {
-                    loadedRandomusers.forEach((randomUser, index) => {
-                        randomUser.initial = randomUser.name.first.charAt(0).toLocaleUpperCase() + randomUser.name.last.charAt(0).toLocaleUpperCase();
-                        randomUser.index = index;
-                        this.randomUserList.push(randomUser);
+        this.randomUserService.getUsers('de')
+            .subscribe(loadedRandomusers => {
+                loadedRandomusers.forEach((randomUser, index) => {
+                    randomUser.initial = randomUser.name.first.charAt(0).toLocaleUpperCase() + randomUser.name.last.charAt(0).toLocaleUpperCase();
+                    randomUser.index = index;
+                    this.randomUserList.push(randomUser);
 
-                        if(randomUser.favorite){
-                            this.favoriteUserList.push(randomUser);
-                        }
-                    });
-                    this.isLoading = false;
-                    this.listLoaded = true;
+                    if(randomUser.favorite){
+                        this.favoriteUserList.push(randomUser);
+                    }
                 });
-        }
+                this.isLoading = false;
+                this.listLoaded = true;
+            });
     }
 
     onFavoriteIconTap(user): void{

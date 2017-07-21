@@ -32,7 +32,7 @@ export class TabViewItemsComponent {
     ) { }
 
     ngOnInit(): void {
-        this.changeSelectedTab(1);
+        this.changeSelectedTab(4);
     }
 
     changeSelectedTab(tab): void {

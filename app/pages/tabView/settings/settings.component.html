@@ -1,5 +1,44 @@
 <StackLayout>
-    <FlexboxLayout flexDirection="column">
+    <FlexboxLayout class="wrapper">
+
+        <FlexboxLayout>
+            <Label class="text-white" text="Allgemein"></Label>
+        </FlexboxLayout>
+
+        <FlexboxLayout  class="color-light">
+            <Label text="Nachrichten"></Label>
+
+            <Switch></Switch>
+        </FlexboxLayout>
+
+        <FlexboxLayout>
+            <Label text="Fotos"></Label>
+
+            <Switch></Switch>
+        </FlexboxLayout>
+
+        <FlexboxLayout  class="color-light">
+            <Label text="Mobile Daten"></Label>
+
+            <Switch></Switch>
+        </FlexboxLayout>
+
+        <FlexboxLayout>
+            <Label class="text-white" text="Anzahl Listenelemente"></Label>
+        </FlexboxLayout>
+
+
+        <FlexboxLayout class="color-light" flexDirection="row">
+            <Label class="h3" text="1" textWrap="true" width="100"></Label>
+            <Slider flexGrow="1" #slider minValue="1" maxValue="1000" value="{{sliderValue}}" (valueChange)="newSliderValue(slider.value)"></Slider>
+            <Label class="h3" text="1000" textWrap="true" width="120"></Label>
+        </FlexboxLayout>
+
+
+    </FlexboxLayout>
+
+
+    <!--<FlexboxLayout flexDirection="column">
         &lt;!&ndash; Reverse the natural flow of items &ndash;&gt;
         <FlexboxLayout height="22" flexDirection="row-reverse">
             &lt;!&ndash; Use even flexGrow to achieve uniform grid &ndash;&gt;
@@ -53,5 +92,5 @@
             <Label class="h3" text="1000" textWrap="true" width="120"></Label>
         </FlexboxLayout>
 
-    </FlexboxLayout>
+    </FlexboxLayout>-->
 </StackLayout>

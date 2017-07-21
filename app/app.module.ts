@@ -5,7 +5,7 @@ import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
 import { TabViewItemsComponent } from "./pages/tabView/tabView.component";
-import { UserDetailsComponent } from "./pages/listView/userDetails/userDetails.component";
+
 import { ItemService } from "./shared/item/item.service";
 import { ItemsComponent } from "./pages/item/items.component";
 import { ItemDetailComponent } from "./pages/item/item-detail.component";
@@ -15,8 +15,10 @@ import { MapComponent } from "./pages/tabView/map/map.component";
 
 
 import * as platform from "platform";
-import { ListViewComponent } from './pages/listView/listView.component';
+
 import { RandomuserService } from './shared/user/randomUser.service';
+import { UserDetailsComponent } from './pages/tabView/listView/userDetails/userDetails.component';
+import { ListViewComponent } from './pages/tabView/listView/listView.component';
 declare var GMSServices: any;
 
 if(platform.isIOS) {

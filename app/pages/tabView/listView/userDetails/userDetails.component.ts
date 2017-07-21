@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
 import { alert } from "ui/dialogs";
-import { UserData } from "../../../providers/userData/userData";
-import { Randomuser } from "../../../shared/user/randomUser";
 import { Page } from 'tns-core-modules/ui/page';
+import { Randomuser } from '../../../../shared/user/randomUser';
+import { UserData } from '../../../../providers/userData/userData';
 
 @Component({
     moduleId: module.id,

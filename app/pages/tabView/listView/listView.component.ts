@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core'
 import { RouterExtensions } from 'nativescript-angular/router'
-import { RandomuserService } from '../../shared/user/randomUser.service';
-import { Randomuser } from '../../shared/user/randomUser';
-import { UserData } from '../../providers/userData/userData';
+
 import "rxjs/add/operator/switchMap";
 import { ActivatedRoute } from '@angular/router';
+import { Randomuser } from '../../../shared/user/randomUser';
+import { RandomuserService } from '../../../shared/user/randomUser.service';
+import { UserData } from '../../../providers/userData/userData';
 
 
 @Component({

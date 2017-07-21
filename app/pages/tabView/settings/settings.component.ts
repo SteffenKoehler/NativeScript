@@ -10,9 +10,9 @@ import { RouterExtensions } from 'nativescript-angular/router'
 })
 export class SettingsComponent implements OnInit {
 
-    @ViewChild('scrollView') scrollView: ElementRef
+    @ViewChild('scrollView') scrollView: ElementRef;
 
-    private isLoading = true
+    private isLoading = true;
 
     constructor(
         private router: RouterExtensions,

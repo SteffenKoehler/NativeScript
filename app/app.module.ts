@@ -19,6 +19,7 @@ import * as platform from "platform";
 import { RandomuserService } from './shared/user/randomUser.service';
 import { UserDetailsComponent } from './pages/tabView/listView/userDetails/userDetails.component';
 import { ListViewComponent } from './pages/tabView/listView/listView.component';
+import { SettingsComponent } from './pages/tabView/settings/settings.component';
 declare var GMSServices: any;
 
 if(platform.isIOS) {
@@ -42,7 +43,8 @@ if(platform.isIOS) {
         TabViewItemsComponent,
         UserDetailsComponent,
         MapComponent,
-        ListViewComponent
+        ListViewComponent,
+        SettingsComponent
     ],
     providers: [
         ItemService,

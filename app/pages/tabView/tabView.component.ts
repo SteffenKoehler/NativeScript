@@ -45,6 +45,8 @@ export class TabViewItemsComponent {
             this.routerExtensions.navigate(["listFavorite", {selectedTab: tab}], /*{clearHistory: true}*/);
         } else if (tab === 3) {
             this.routerExtensions.navigate(["map", {selectedTab: tab}], /*{clearHistory: true}*/);
+        } else if (tab === 4) {
+            this.routerExtensions.navigate(["settings", {selectedTab: tab}], /*{clearHistory: true}*/);
         }
     }
 

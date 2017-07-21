@@ -8,6 +8,7 @@ import { ItemDetailComponent } from "./pages/item/item-detail.component";
 import { MapComponent } from './pages/tabView/map/map.component';
 import { UserDetailsComponent } from './pages/tabView/listView/userDetails/userDetails.component';
 import { ListViewComponent } from './pages/tabView/listView/listView.component';
+import { SettingsComponent } from './pages/tabView/settings/settings.component';
 
 const routes: Routes = [
     { path: "", component: TabViewItemsComponent,
@@ -15,6 +16,7 @@ const routes: Routes = [
             { path: "userDetails", component: UserDetailsComponent},
             { path: "listFavorite", component: ListViewComponent},
             { path: "map", component: MapComponent},
+            { path: "settings", component: SettingsComponent},
         ]
 
     },

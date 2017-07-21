@@ -16,7 +16,7 @@ import {RouterExtensions} from "nativescript-angular";
 @Component({
     moduleId: module.id,
     templateUrl: "./tabView.component.html",
-    styleUrls: ['./tabView-common.css', './tabView.css']
+    styleUrls: ['./tabView-common.css']
 })
 
 export class TabViewItemsComponent {

@@ -6,7 +6,7 @@ import { RouterExtensions } from 'nativescript-angular/router'
     moduleId: module.id,
     selector: 'ns-settings',
     templateUrl: './settings.component.html',
-    styleUrls: ['./settings.component.css']
+    styleUrls: ['./settings.component.css', './settings-common.css']
 })
 export class SettingsComponent implements OnInit {
 

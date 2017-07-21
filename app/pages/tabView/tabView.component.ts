@@ -32,7 +32,7 @@ export class TabViewItemsComponent {
     ) { }
 
     ngOnInit(): void {
-        this.changeSelectedTab(4);
+        this.changeSelectedTab(3);
     }
 
     changeSelectedTab(tab): void {
@@ -43,6 +43,8 @@ export class TabViewItemsComponent {
             this.routerExtensions.navigate(["listFavorite", {selectedTab: tab}], /*{clearHistory: true}*/);
         } else if (tab === 2) {
             this.routerExtensions.navigate(["listFavorite", {selectedTab: tab}], /*{clearHistory: true}*/);
+        } else if (tab === 3) {
+            this.routerExtensions.navigate(["map", {selectedTab: tab}], /*{clearHistory: true}*/);
         }
     }
 

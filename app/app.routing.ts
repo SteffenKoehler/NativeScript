@@ -7,12 +7,14 @@ import { UserDetailsComponent } from "./pages/tabView/userDetails/userDetails.co
 import { ItemsComponent } from "./pages/item/items.component";
 import { ItemDetailComponent } from "./pages/item/item-detail.component";
 import { ListViewComponent } from './pages/listView/listView.component';
+import { MapComponent } from './pages/tabView/map/map.component';
 
 const routes: Routes = [
     { path: "", component: TabViewItemsComponent,
         children: [
             { path: "userDetails", component: UserDetailsComponent},
             { path: "listFavorite", component: ListViewComponent},
+            { path: "map", component: MapComponent},
         ]
 
     },

@@ -5,7 +5,7 @@ import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
 import { TabViewItemsComponent } from "./pages/tabView/tabView.component";
-import { UserDetailsComponent } from "./pages/tabView/userDetails/userDetails.component";
+import { UserDetailsComponent } from "./pages/listView/userDetails/userDetails.component";
 import { ItemService } from "./shared/item/item.service";
 import { ItemsComponent } from "./pages/item/items.component";
 import { ItemDetailComponent } from "./pages/item/item-detail.component";

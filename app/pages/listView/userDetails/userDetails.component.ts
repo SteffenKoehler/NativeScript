@@ -23,24 +23,9 @@ export class UserDetailsComponent implements OnInit {
     ) {
         this.person = this.userData.storage;
         this.isLoading = false;
-        //page.actionBarHidden = true;
     }
 
     ngOnInit() {
 
     }
-
-    onAddReactionButtonTap() {
-        let options = {
-            title: "Add reaction",
-            message: "Added some fancy reaction *lul*",
-            okButtonText: "OK"
-        };
-
-        alert(options).then(() => {
-            console.log("Race chosen!");
-        });
-    }
-
-
 }

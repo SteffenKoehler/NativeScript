@@ -3,7 +3,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 
 import { TabViewItemsComponent } from "./pages/tabView/tabView.component"
-import { UserDetailsComponent } from "./pages/tabView/userDetails/userDetails.component"
+import { UserDetailsComponent } from "./pages/listView/userDetails/userDetails.component"
 import { ItemsComponent } from "./pages/item/items.component";
 import { ItemDetailComponent } from "./pages/item/item-detail.component";
 import { ListViewComponent } from './pages/listView/listView.component';

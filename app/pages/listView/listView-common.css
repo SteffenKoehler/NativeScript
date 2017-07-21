@@ -24,9 +24,9 @@ ListView {
 
 
 .user-details {
-    flex: 1;
     flex-direction: column;
     justify-content: center;
+    flex-grow: 1;
 }
 
 .user-details .name {

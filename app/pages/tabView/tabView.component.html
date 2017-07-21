@@ -1,26 +1,27 @@
 <StackLayout>
-    <FlexboxLayout>
-        <FlexboxLayout flexGrow="1">
-            <Label text="Favoriten"></Label>
+
+    <FlexboxLayout class="wrapper">
+        <FlexboxLayout flexGrow="1" (onTap)="changeSelectedTab(1)">
+            <Image [src]="srcHeartIcon"></Image>
         </FlexboxLayout>
 
-        <FlexboxLayout flexGrow="1">
-            <Label text="Kontakte"></Label>
+        <FlexboxLayout flexGrow="1" (onTap)="changeSelectedTab(2)">
+            <Image [src]="srcPeopleIcon"></Image>
         </FlexboxLayout>
 
-        <FlexboxLayout flexGrow="1">
-            <Label text="Karte"></Label>
+        <FlexboxLayout flexGrow="1" (onTap)="changeSelectedTab(3)">
+            <Image [src]="srcWorldIcon"></Image>
         </FlexboxLayout>
 
-        <FlexboxLayout flexGrow="1">
-            <Label text="Set"></Label>
+        <FlexboxLayout flexGrow="1" (onTap)="changeSelectedTab(4)">
+            <Image [src]="srcSettingsIcon"></Image>
         </FlexboxLayout>
 
     </FlexboxLayout>
 
 
 
-    <ns-listView></ns-listView>
+    <ns-listView *ngIf="selectedTab === 1 || selectedTab === 2" [selectedTab]="selectedTab"></ns-listView>
 
 
 </StackLayout>

@@ -1,10 +1,39 @@
 <FlexboxLayout class="wrapper" flexDirection="column">
-    <ListView  [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)">
+    <ListView  [items]="favoriteUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)" *ngIf="selectedTab === 1">
+        <ng-template let-item="item">
+            <FlexboxLayout>
+
+                <FlexboxLayout class="user-thumbnail">
+                    <Label textWrap="false" [text]="item.initial"></Label>
+                </FlexboxLayout>
+
+                <FlexboxLayout class="user-details">
+                    <FlexboxLayout class="name">
+                        <Label [text]="item.name.first"></Label>
+                        <Label class="m-l-5" [text]="item.name.last"></Label>
+                    </FlexboxLayout>
+
+                    <FlexboxLayout class="city">
+                        <Label textWrap="true" [text]="item.location.city"></Label>
+                    </FlexboxLayout>
+
+                </FlexboxLayout>
+
+                <FlexboxLayout width="34" (onTap)="onFavoriteIconTap(item)">
+                    <Image width="20" [src]="item.favorite ? '~/images/heart2_filled.png' : '~/images/heart2_empty.png'"></Image>
+                </FlexboxLayout>
+
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+
+
+    <ListView  [items]="randomUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)" *ngIf="selectedTab === 2">
         <ng-template let-item="item">
             <FlexboxLayout flexDirection="row">
 
                 <FlexboxLayout class="user-thumbnail">
-                    <Label textWrap="false" [text]="item.initials"></Label>
+                    <Label textWrap="false" [text]="item.initial"></Label>
                 </FlexboxLayout>
 
                 <FlexboxLayout class="user-details">

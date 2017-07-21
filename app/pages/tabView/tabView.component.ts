@@ -21,100 +21,44 @@ import {RouterExtensions} from "nativescript-angular";
 })
 
 export class TabViewItemsComponent {
-    public  selectedIndex: number;
-    isLoading = false;
-    listLoaded = false;
+    srcHeartIcon: string;
+    srcPeopleIcon: string;
+    srcWorldIcon: string;
+    srcSettingsIcon: string;
+    selectedTab: number;
     items: Item[];
-    randomUserList: Array<Randomuser> = [];
-    favoriteUserList: Array<Randomuser> = [];
-    randomUserCount: number = 0;
-    sliderValue: number;
-    actionBarTitle: string;
 
-    constructor(
-        private itemService: ItemService,
-        private randomUserService: RandomuserService,
-        private routerExtensions: RouterExtensions,
-        private userData : UserData,
-
-    ) {
-
-    }
+    constructor() { }
 
     ngOnInit(): void {
-        this.selectedIndex = 1;
-        this.items = this.itemService.getItems();
-        this.listLoaded = true;
+        this.changeSelectedTab(1);
     }
 
+    changeSelectedTab(tab): void {
+        this.selectedTab = tab;
+        this.setSrcForIcons();
+    }
 
-    public onIndexChanged(args) {
-        let tabView = <TabView>args.object;
-        this.selectedIndex = tabView.selectedIndex;
+    setSrcForIcons() {
+        this.srcHeartIcon = '~/images/tab-view/heart_empty.png';
+        this.srcPeopleIcon = '~/images/tab-view/people_empty.png';
+        this.srcWorldIcon = '~/images/tab-view/world_empty.png';
+        this.srcSettingsIcon = '~/images/tab-view/settings_empty.png';
 
-
-        if (this.selectedIndex === 0){
-            this.actionBarTitle = "Karte";
-        } else if(this.selectedIndex === 1) {
-            this.actionBarTitle = "Kontakte";
-            this.getUserList(args);
-        } else if (this.selectedIndex === 2){
-            this.actionBarTitle = "Einstellungen";
+        switch (this.selectedTab) {
+            case 1:
+                this.srcHeartIcon = '~/images/tab-view/heart_filled.png';
+                break;
+            case 2:
+                this.srcPeopleIcon = '~/images/tab-view/people_filled.png';
+                break;
+            case 3:
+                this.srcWorldIcon = '~/images/tab-view/world_filled.png';
+                break;
+            case 4:
+                this.srcSettingsIcon = '~/images/tab-view/settings_filled.png';
+                break;
         }
-    }
-
-    getUserList (args) {
-        if(this.randomUserCount !== this.randomUserService.numberOfResults) {
-            this.isLoading = true;
-            this.listLoaded = false;
-            this.randomUserList = [];
-            this.favoriteUserList = [];
-
-            this.randomUserCount = this.randomUserService.numberOfResults;
-            this.randomUserService.getUsers('de')
-                .subscribe(loadedRandomusers => {
-                    loadedRandomusers.forEach((randomUser) => {
-                        randomUser.initial = randomUser.name.first.charAt(0).toLocaleUpperCase() + randomUser.name.last.charAt(0).toLocaleUpperCase();
-                        this.randomUserList.push(randomUser);
-
-                        if(randomUser.favorite){
-                            this.favoriteUserList.push(randomUser);
-                        }
-                    });
-                    this.isLoading = false;
-                    this.listLoaded = true;
-                });
-        }
-    }
-
-    onUserTab(args){
-        this.userData.storage = this.randomUserList[args.index];
-        this.routerExtensions.navigate(["userDetails"]);
-    }
-
-    onFavoriteIconTap(user){
-
-        if(!user.favorite){
-            this.favoriteUserList.unshift(user);
-            user.favorite = true;
-        } else if (user.favorite){
-            let userIndex = this.favoriteUserList.indexOf(user);
-
-            if(userIndex > -1){
-                this.favoriteUserList.splice(userIndex, 1);
-                user.favorite = false;
-            }
-        }
-
-    }
-
-    onFavoriteUserTap(index) {
-        this.userData.storage = this.favoriteUserList[index];
-        this.routerExtensions.navigate(["userDetails"]);
-    }
-
-    newSliderValue(newValue) {
-        this.randomUserService.numberOfResults = Math.round(newValue);
     }
 }
 

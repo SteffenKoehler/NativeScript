@@ -6,13 +6,17 @@ import { TabViewItemsComponent } from "./pages/tabView/tabView.component"
 import { UserDetailsComponent } from "./pages/tabView/userDetails/userDetails.component"
 import { ItemsComponent } from "./pages/item/items.component";
 import { ItemDetailComponent } from "./pages/item/item-detail.component";
+import { ListViewComponent } from './pages/listView/listView.component';
 
 const routes: Routes = [
-    { path: "", redirectTo: "/tabView", pathMatch: "full" },
-    { path: "tabView", component: TabViewItemsComponent},
-    { path: "userDetails", component: UserDetailsComponent},
-    { path: "items", component: ItemsComponent },
-    { path: "item/:id", component: ItemDetailComponent },
+    { path: "", component: TabViewItemsComponent,
+        children: [
+            { path: "userDetails", component: UserDetailsComponent},
+            { path: "listFavorite", component: ListViewComponent},
+        ]
+
+    },
+
 ];
 
 @NgModule({

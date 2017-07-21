@@ -1,7 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { RouterExtensions } from 'nativescript-angular/router'
 import { RandomuserService } from '../../shared/user/randomUser.service';
 import { Randomuser } from '../../shared/user/randomUser';
+import { UserData } from '../../providers/userData/userData';
+import "rxjs/add/operator/switchMap";
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,25 +14,25 @@ import { Randomuser } from '../../shared/user/randomUser';
     styleUrls: ['./listView.component.css', './listView-common.css']
 })
 export class ListViewComponent implements OnInit {
-    @Input() selectedTab: string;
-
-
-    selectedIndex: number;
+    selectedTab: number;
     isLoading = false;
     listLoaded = false;
-    //items: Item[];
     randomUserList: Array<Randomuser> = [];
     favoriteUserList: Array<Randomuser> = [];
     randomUserCount: number = 0;
-    sliderValue: number;
-    actionBarTitle: string;
 
     constructor(
-        private router: RouterExtensions,
-        private randomUserService: RandomuserService
+        private routerExtensions: RouterExtensions,
+        private randomUserService: RandomuserService,
+        private userData: UserData,
+        private route: ActivatedRoute
     ) { }
 
     ngOnInit() {
+        this.route.params
+            .forEach(params => {
+                this.selectedTab = Number(this.route.snapshot.params['selectedTab']);
+            });
         this.getUserList()
     }
 
@@ -71,6 +74,12 @@ export class ListViewComponent implements OnInit {
             }
         }
     }
+
+    onUserTab(args){
+        this.userData.storage = this.randomUserList[args.index];
+        this.routerExtensions.navigate(["userDetails"], /*{clearHistory: true}*/);
+    }
+
 
 
 }

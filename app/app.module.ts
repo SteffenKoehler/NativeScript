@@ -16,6 +16,7 @@ import { MapComponent } from "./pages/tabView/map/map.component";
 
 import * as platform from "platform";
 import { ListViewComponent } from './pages/listView/listView.component';
+import { RandomuserService } from './shared/user/randomUser.service';
 declare var GMSServices: any;
 
 if(platform.isIOS) {
@@ -43,7 +44,8 @@ if(platform.isIOS) {
     ],
     providers: [
         ItemService,
-        UserData
+        UserData,
+        RandomuserService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

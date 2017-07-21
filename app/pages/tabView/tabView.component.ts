@@ -16,7 +16,6 @@ import {RouterExtensions} from "nativescript-angular";
 @Component({
     moduleId: module.id,
     templateUrl: "./tabView.component.html",
-    providers: [RandomuserService],
     styleUrls: ['./tabView-common.css', './tabView.css']
 })
 
@@ -28,15 +27,23 @@ export class TabViewItemsComponent {
     selectedTab: number;
     items: Item[];
 
-    constructor() { }
+    constructor(
+        private routerExtensions: RouterExtensions
+    ) { }
 
     ngOnInit(): void {
-        this.changeSelectedTab(1);
+        this.changeSelectedTab(4);
     }
 
     changeSelectedTab(tab): void {
         this.selectedTab = tab;
         this.setSrcForIcons();
+
+        if(tab === 1) {
+            this.routerExtensions.navigate(["listFavorite", {selectedTab: tab}], /*{clearHistory: true}*/);
+        } else if (tab === 2) {
+            this.routerExtensions.navigate(["listFavorite", {selectedTab: tab}], /*{clearHistory: true}*/);
+        }
     }
 
     setSrcForIcons() {

@@ -6,17 +6,43 @@ StackLayout {
     margin-left: 20;
     margin-top: 20;
     margin-right: 20;
+    padding-top: 20;
+    padding-bottom: 10;
     background-color: rgb(165, 224, 218);
+}
+
+.no-border-right {
+    border-right-width: 0;
 }
 
 
 .wrapper FlexboxLayout {
-    padding-top: 20;
-    padding-bottom: 20;
+    flex-direction: column;
     justify-content: center;
+    border-bottom-width: 1;
+    border-bottom-color: #7FD3CB;
+    border-right-width: 1;
+    border-right-color: #7FD3CB;
 }
 
 .wrapper Image {
     width: 40;
     height: 40;
+    margin-bottom: 10;
+}
+
+.container {
+    margin-left: 20;
+    margin-right: 20;
+    padding-left: 20;
+    padding-bottom: 10;
+    background-color: rgb(165, 224, 218);
+}
+
+.container FlexboxLayout {
+}
+
+.container Label {
+    font-size: 10dpi;
+    color: #69C3BB;
 }

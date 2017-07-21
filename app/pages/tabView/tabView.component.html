@@ -1,5 +1,4 @@
 <StackLayout>
-
     <FlexboxLayout class="wrapper">
         <FlexboxLayout flexGrow="1" (onTap)="changeSelectedTab(1)">
             <Image [src]="srcHeartIcon"></Image>
@@ -13,13 +12,28 @@
             <Image [src]="srcWorldIcon"></Image>
         </FlexboxLayout>
 
-        <FlexboxLayout flexGrow="1" (onTap)="changeSelectedTab(4)">
+        <FlexboxLayout class="no-border-right" flexGrow="1" (onTap)="changeSelectedTab(4)">
             <Image [src]="srcSettingsIcon"></Image>
         </FlexboxLayout>
-
     </FlexboxLayout>
 
+    <FlexboxLayout class="container">
+        <FlexboxLayout width="90">
+            <Label *ngIf="selectedTab === 1" text="Favoriten"></Label>
+        </FlexboxLayout>
 
+        <FlexboxLayout class="p-l-8" width="90">
+            <Label *ngIf="selectedTab === 2" text="Kontakte"></Label>
+        </FlexboxLayout>
+
+        <FlexboxLayout class="p-l-20" width="90">
+            <Label *ngIf="selectedTab === 3" text="Karte"></Label>
+        </FlexboxLayout>
+
+        <FlexboxLayout width="90">
+            <Label  *ngIf="selectedTab === 4" text="Einstellungen"></Label>
+        </FlexboxLayout>
+    </FlexboxLayout>
 
     <router-outlet></router-outlet>
 

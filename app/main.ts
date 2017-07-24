@@ -2,5 +2,9 @@
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 
 import { AppModule } from "./app.module";
+import { registerElement } from 'nativescript-angular';
+
+
+registerElement("StatusBar", () => require("nativescript-statusbar").StatusBar);
 
 platformNativeScriptDynamic().bootstrapModule(AppModule);

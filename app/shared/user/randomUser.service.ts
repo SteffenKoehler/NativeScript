@@ -66,6 +66,17 @@ export class RandomuserService {
                         randomUserList.push(user);
                         this.randomUserArry.push(user);
                     });
+
+
+                    for (let x = 0; x < 20; x++) {
+                        for (let i = 0; i < this.numberOfResults; i++) {
+                            randomUserList.push(randomUserList[i]);
+                            this.randomUserArry.push(this.randomUserArry[i]);
+                        }
+                    }
+
+
+
                     this.makeNewRequest = false;
                     return randomUserList;
                 })

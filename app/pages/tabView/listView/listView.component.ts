@@ -53,6 +53,9 @@ export class ListViewComponent implements OnInit {
                         this.favoriteUserList.push(randomUser);
                     }
                 });
+
+                console.log('####', this.randomUserList.length);
+
                 this.isLoading = false;
                 this.listLoaded = true;
             });

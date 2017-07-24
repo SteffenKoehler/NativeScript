@@ -1,6 +1,6 @@
 <FlexboxLayout class="wrapper" flexDirection="column">
 
-    <ListView  [items]="favoriteUserList" [class.visible]="listLoaded" (itemTap)="onUserTab($event)" *ngIf="selectedTab === 1">
+    <ListView  [items]="favoriteUserList" [class.visible]="listLoaded" (itemTap)="onFavUserTab($event)" *ngIf="selectedTab === 1">
         <ng-template let-item="item">
             <FlexboxLayout>
 

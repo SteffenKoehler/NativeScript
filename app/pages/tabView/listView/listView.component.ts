@@ -77,6 +77,11 @@ export class ListViewComponent implements OnInit {
         this.routerExtensions.navigate(["userDetails"], /*{clearHistory: true}*/);
     }
 
+    onFavUserTab(args){
+        this.userData.storage = this.favoriteUserList[args.index];
+        this.routerExtensions.navigate(['userDetails']);
+    }
+
 
 
 }

@@ -21,12 +21,12 @@ StackLayout {
 }
 
 .user-details {
-    margin-top: -120vh;
+    margin-top: -95vh;
 }
 
 .user-details Image {
-    width: 150vw;
-    height: 150vw;
+    width: 120vw;
+    height: 120vw;
     border-width: 2;
     border-radius: 150;
     border-color: #578C87;

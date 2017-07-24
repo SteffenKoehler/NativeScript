@@ -11,7 +11,7 @@ import { ImageSource } from "image-source";
 
 
 // Important - must register MapView plugin in order to use in Angular templates
-registerElement('MapView', () => MapView);
+registerElement("MapView", () => require("nativescript-google-maps-sdk").MapView);
 
 @Component({
     moduleId: module.id,
@@ -47,22 +47,35 @@ export class MapComponent {
         console.log(this.street);
 
         let imgSrc = new ImageSource();
-        imgSrc.fromResource("icon");
+
+        imgSrc.loadFromResource('positionpoint');
 
         let image = new Image();
         image.imageSource = imgSrc;
+
+        console.log(image);
 
         let lat = 49.395750;
         let long = 8.672434;
 
 
-        for (let i = 0; i < 30; i++){
+        for (let i = 0; i < 50; i++){
             var marker = new Marker();
-            marker.position = Position.positionFromLatLng(lat + Math.random() + Math.random(), long + Math.random() + Math.random());
+            marker.position = Position.positionFromLatLng(lat + 2 * Math.random(), long + 2* Math.random());
             marker.title = "Heidelberg";
             marker.snippet = "Germany";
             marker.userData = {index: 1};
-            //marker.icon = image;
+            marker.icon = image;
+            this.mapView.addMarker(marker);
+        }
+
+        for (let i = 0; i < 50; i++){
+            var marker = new Marker();
+            marker.position = Position.positionFromLatLng(lat - 2 * Math.random(), long - 2* Math.random());
+            marker.title = "Heidelberg";
+            marker.snippet = "Germany";
+            marker.userData = {index: 1};
+            marker.icon = image;
             this.mapView.addMarker(marker);
         }
 
@@ -72,22 +85,22 @@ export class MapComponent {
         marker.title = "Heidelberg";
         marker.snippet = "Germany";
         marker.userData = {index: 1};
-        //marker.icon = image;
+        marker.icon = image;
         this.mapView.addMarker(marker);
     }
 
     onCoordinateTapped(args) {
-        console.log("Coordinate Tapped, Lat: " + args.position.latitude + ", Lon: " + args.position.longitude, args);
+        //console.log("Coordinate Tapped, Lat: " + args.position.latitude + ", Lon: " + args.position.longitude, args);
     }
 
     onMarkerEvent(args) {
-        console.log("Marker Event: '" + args.eventName
+        /*console.log("Marker Event: '" + args.eventName
             + "' triggered on: " + args.marker.title
-            + ", Lat: " + args.marker.position.latitude + ", Lon: " + args.marker.position.longitude, args);
+            + ", Lat: " + args.marker.position.latitude + ", Lon: " + args.marker.position.longitude, args);*/
     }
 
     onCameraChanged(args) {
-        console.log("Camera changed: " + JSON.stringify(args.camera), JSON.stringify(args.camera) === this.lastCamera);
+        //console.log("Camera changed: " + JSON.stringify(args.camera), JSON.stringify(args.camera) === this.lastCamera);
         this.lastCamera = JSON.stringify(args.camera);
     }
 

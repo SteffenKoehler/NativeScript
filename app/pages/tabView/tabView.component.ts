@@ -1,15 +1,7 @@
 import { Component } from "@angular/core";
-import { StackLayout } from "ui/layouts/stack-layout";
-
-import { TabView, SelectedIndexChangedEventData, TabViewItem } from "ui/tab-view";
-
 import { Item } from "../../shared/item/item";
-import { ItemService } from "../../shared/item/item.service";
-import { Randomuser } from "../../shared/user/randomUser";
-import { RandomuserService } from "../../shared/user/randomUser.service";
-
-import { UserData } from "../../providers/userData/userData";
 import {RouterExtensions} from "nativescript-angular";
+import { Router } from '@angular/router'
 
 
 
@@ -28,7 +20,8 @@ export class TabViewItemsComponent {
     items: Item[];
 
     constructor(
-        private routerExtensions: RouterExtensions
+        private routerExtensions: RouterExtensions,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -36,6 +29,10 @@ export class TabViewItemsComponent {
     }
 
     changeSelectedTab(tab): void {
+        if (this.router.url === '/userDetails') {
+            return;
+        }
+
         this.selectedTab = tab;
         this.setSrcForIcons();
 

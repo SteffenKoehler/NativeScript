@@ -1,9 +1,17 @@
 <StackLayout>
     <ScrollView>
         <FlexboxLayout class="details-wrapper m-20" flexDirection="column" alignItems="center">
+
+
             <StackLayout class="background-img">
                 <Image [src]="person.picture.large"></Image>
             </StackLayout>
+
+
+            <AbsoluteLayout class="back-button" (onTap)="goPageBack()">
+                <Image src="~/images/user-details/back.png"></Image>
+            </AbsoluteLayout>
+
 
             <FlexboxLayout class="user-details">
                 <Image [src]="person.picture.large"></Image>

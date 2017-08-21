@@ -46,7 +46,7 @@ TabView {
 }
 
 .settings-wrapper .options .border-top{
-    border-bottom-color: #c8c7cc;
+    border-top-color: #c8c7cc;
     border-top-width: 1;
 }
 

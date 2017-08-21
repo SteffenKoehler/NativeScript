@@ -31,3 +31,38 @@ TabView {
 .favorite-label-name {
     font-size: 12dpi;
 }
+
+.settings-wrapper {
+    background-color: #efeff4;
+}
+
+.settings-wrapper .options {
+    background-color: white;
+}
+
+.settings-wrapper .options FlexboxLayout {
+    border-bottom-color: #c8c7cc;
+    border-bottom-width: 1;
+}
+
+.settings-wrapper .options .border-top{
+    border-bottom-color: #c8c7cc;
+    border-top-width: 1;
+}
+
+.settings-wrapper .slider-wrapper {
+    background-color: white;
+}
+
+.settings-wrapper .heading {
+    color: #6d6d72;
+    font-size: 13;
+}
+
+.rectangle {
+    width: 14;
+    height: 14;
+    border-radius: 3;
+    border-width: 1;
+    border-color: #000000;
+}

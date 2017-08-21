@@ -38,7 +38,7 @@ export class TabViewItemsComponent {
     ) {}
 
     ngOnInit(): void {
-        this.selectedIndex = 1;
+        this.selectedIndex = 2;
         this.items = this.itemService.getItems();
         this.listLoaded = true;
     }

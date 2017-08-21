@@ -85,65 +85,50 @@
         </FlexboxLayout>
     </ng-template>
 
-    <ng-template tabItem [iconSource]="selectedIndex == 2 ? 'res://setting_orange' : 'res://setting'">
-        <StackLayout>
+    <template tabItem [iconSource]="selectedIndex == 2 ? 'res://setting_orange' : 'res://setting'">
+        <StackLayout class="settings-wrapper">
             <FlexboxLayout flexDirection="column">
-                <!-- Reverse the natural flow of items -->
-                <FlexboxLayout height="22" flexDirection="row-reverse">
-                    <!-- Use even flexGrow to achieve uniform grid -->
-                    <Label text="1" backgroundColor="#EEEEEE" flexGrow="1" id="one"></Label>
-                    <Label text="2" backgroundColor="#DDDDDD" flexGrow="1"></Label>
-                    <Label text="3" backgroundColor="#CCCCCC" flexGrow="1"></Label>
-                    <Label text="4" backgroundColor="#BBBBBB" flexGrow="1"></Label>
-                    <Label text="5" backgroundColor="#AAAAAA" flexGrow="1"></Label>
-                    <Label text="6" backgroundColor="#999999" flexGrow="1" id="six"></Label>
+                <FlexboxLayout class="p-l-15 p-t-15 p-b-5 heading">
+                    <Label text="DATENQUELLE"></Label>
                 </FlexboxLayout>
 
-                <!-- Set flexGrow to accomodate into any extra space -->
-                <ScrollView flexGrow="1" id="scrollview">
+                <FlexboxLayout flexDirection="column" class="options">
 
-                    <!-- Wrap excessive items on new lines -->
-                    <FlexboxLayout flexWrap="true" alignContent="flex-start">
-
-                        <Label textWrap="true" text="Sed aliquet diam sed augue vestibulum scelerisque." id="title"></Label>
-
-                        <!-- Use flexWrapBefore to control explicit line wrapping -->
-                        <Label text="Gihub issue labels:" flexWrapBefore="true" fontSize="11"></Label>
-
-                        <Label text="S: High" flexWrapBefore="true" borderRadius="5" backgroundColor="red" margin="2" id="firstlabel"></Label>
-                        <Label text="T: Feature" borderRadius="5" backgroundColor="green" margin="2"></Label>
-                        <Label text="3 - In Progress" borderRadius="5" backgroundColor="gray" margin="2"></Label>
-                        <Label text="S: Ullamcorper" borderRadius="5" backgroundColor="red" margin="2" ></Label>
-                        <Label text="T: Vulputate" borderRadius="5" backgroundColor="green" margin="2"></Label>
-                        <Label text="2 - Egestas magna" borderRadius="5" backgroundColor="gray" margin="2"></Label>
-                        <Label text="S: High" borderRadius="5" backgroundColor="red" margin="2"></Label>
-                        <Label text="T: Phasellus" borderRadius="5" backgroundColor="green" margin="2"></Label>
-                        <Label text="Nullam" borderRadius="5" backgroundColor="gray" margin="2"></Label>
-
-                        <Label flexWrapBefore="true" textWrap="true" text="Pellentesque molestie nibh et leo facilisis gravida ac porttitor eros. Etiam tempus diam nulla, ut fermentum mauris aliquet quis. Cras finibus vitae magna in bibendum." id="description"></Label>
+                    <FlexboxLayout class="p-l-15 p-r-15 p-t-8 p-b-8 border-top" flexDirection="row" justifyContent="space-between">
+                        <Label text="Option 1"></Label>
+                        <Switch></Switch>
                     </FlexboxLayout>
-                </ScrollView>
-                <FlexboxLayout>
-                    <Button text="&lt;" width="50" backgroundColor="gray"></Button>
-                    <!-- Set flexGrow to 1 accomodate into any extra space -->
-                    <Button text="reactions" flexGrow="1" backgroundColor="darkgray"></Button>
-                    <Button text="&gt;" width="50" backgroundColor="gray"></Button>
+
+                    <FlexboxLayout class="p-l-15 p-r-15 p-t-8 p-b-8" flexDirection="row" justifyContent="space-between">
+                        <Label text="Option 2"></Label>
+                        <Switch></Switch>
+                    </FlexboxLayout>
+
+                    <FlexboxLayout class="p-l-15 p-r-15 p-t-8 p-b-8" flexDirection="row" justifyContent="space-between">
+                        <Label text="Option 3"></Label>
+                        <Switch></Switch>
+                    </FlexboxLayout>
+
                 </FlexboxLayout>
 
-
-                <FlexboxLayout>
-                    <Switch></Switch>
+                <FlexboxLayout class="p-l-15 p-t-15 p-b-5 heading">
+                    <Label text="ELEMENTANZAHL"></Label>
                 </FlexboxLayout>
 
-                <FlexboxLayout class="m-15" flexDirection="row">
-                    <Label class="h3" text="1" textWrap="true" width="100"></Label>
-                    <Slider flexGrow="1" #slider minValue="1" maxValue="1000" [(ngModel)]="sliderValue" (valueChange)="newSliderValue(slider.value)"></Slider>
-                    <Label class="h3" text="1000" textWrap="true" width="120"></Label>
+                <FlexboxLayout class="p-l-15 p-r-15 p-t-10 p-b-10 slider-wrapper" flexDirection="column">
+                    <FlexboxLayout justifyContent="space-between">
+                        <FlexboxLayout class="m-l-8 rectangle"></FlexboxLayout>
+                        <FlexboxLayout class="rectangle"></FlexboxLayout>
+                    </FlexboxLayout>
+
+                    <FlexboxLayout class="p-t-5">
+                        <Slider flexGrow="1" #slider minValue="1" maxValue="1000" [(ngModel)]="sliderValue" (valueChange)="newSliderValue(slider.value)"></Slider>
+                    </FlexboxLayout>
                 </FlexboxLayout>
 
             </FlexboxLayout>
         </StackLayout>
-    </ng-template>
+    </template>
 
 
 </TabView>

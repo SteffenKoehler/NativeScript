@@ -47,7 +47,8 @@ export class MapComponent {
         console.log(this.street);
 
         let imgSrc = new ImageSource();
-        imgSrc.fromResource("icon");
+
+        imgSrc.loadFromResource('positionpoint');
 
         let image = new Image();
         image.imageSource = imgSrc;
@@ -62,7 +63,7 @@ export class MapComponent {
             marker.title = "Heidelberg";
             marker.snippet = "Germany";
             marker.userData = {index: 1};
-            //marker.icon = image;
+            marker.icon = image;
             this.mapView.addMarker(marker);
         }
 
@@ -72,7 +73,7 @@ export class MapComponent {
         marker.title = "Heidelberg";
         marker.snippet = "Germany";
         marker.userData = {index: 1};
-        //marker.icon = image;
+        marker.icon = image;
         this.mapView.addMarker(marker);
     }
 
